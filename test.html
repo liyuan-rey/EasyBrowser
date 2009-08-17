@@ -1,0 +1,943 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head id="Head"><title>
+	HTTP服务器上断点下载文件 - 孤独的夜 - IT博客
+</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta id="metaKeywords" name="keywords" content="HTTP服务器上断点下载文件" /><link id="MainCss" type="text/css" rel="stylesheet" href="http://www.cnitblog.com/Skins/blue/style.css" /><link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnitblog.com/wangk/rss.aspx" /></head>
+<body>
+    <form name="Form1" method="post" action="5942.html" onsubmit="javascript:return WebForm_OnSubmit();" id="Form1">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="
+__VIEWSTATE" value="" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=PyW-m2hLmppJ9byT1bYEqw2&amp;t=633740135971222506" type="text/javascript"></script>
+
+<script language=JavaScript>
+									function ctlent(evt,id)
+											{
+												if(evt.ctrlKey && evt.keyCode == 13)
+												{	
+													try
+													{
+														TempSave(id);
+													}
+													catch(ex)
+													{
+													}
+													finally
+													{
+													    __doPostBack('AjaxHolder$PostComment$btnSubmit','')
+													}
+												}
+		
+												}</script>
+												<script language=JavaScript>function SetReplyAuhor(author){document.getElementById('AjaxHolder_PostComment_tbComment').value+="@"+author+"\n";document.getElementById('AjaxHolder_PostComment_tbComment').focus();return false}</script>
+<script src="/ScriptResource.axd?d=keXr1l0ODizNGwpG5umihnLbiZlZFmnBNv9PADikeydJNFn_nnzWP6nCtj5LEvCjoGqazIbHl5iuU6pakvSNXw2&amp;t=633740135971222506" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=keXr1l0ODiwWLTaLPM0Wf405seaw-kJY_J94dRUexb3hftiy5dT0X5GxWLiqANj30&amp;t=633069162363593750" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=keXr1l0ODiwWLTaLPM0Wf405seaw-kJY_J94dRUexb1YLr7RQriMsNXsDWOxc8wQub8O_qeSuZ41&amp;t=633069162363593750" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+        
+
+	<div class="pagelayout">
+		
+<div class="header">
+	<div>
+		<a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnitblog.com/wangk/">孤独的夜</a>
+	</div>
+	<div>
+		<table align=center>
+<span id="dict_daily">
+<a href="http://dict.cn/" target="_blank">英语学习</a>
+</span> 
+<script language="JavaScript" src="http://dict.cn/daily.php" defer="defer">
+</script>
+</table>
+	</div>
+</div>
+		<div id="leftmenu" class="leftcolumn" style="display:none">
+			
+			
+<h1 class = "listtitle">导航</h1>
+<ul class = "list">
+			<li class = "listitem"><a id="MyLinks1_HomeLink" class="listitem" href="http://www.cnitblog.com/">IT博客</a></li>
+			<li class = "listitem"><a id="MyLinks1_MyHomeLink" href="http://www.cnitblog.com/wangk/">首页</a>
+			<li class = "listitem"><a id="MyLinks1_NewPostLink" href="http://www.cnitblog.com/wangk/admin/EditPosts.aspx?opt=1">新随笔</a>
+			<li class = "listitem"><a id="MyLinks1_ContactLink" accesskey="9" class="listitem" href="http://www.cnitblog.com/wangk/contact.aspx?id=1">联系</a></li>
+			<li class = "listitem"><a id="MyLinks1_Syndication" class="listitem" href="http://www.cnitblog.com/wangk/Rss.aspx">聚合</a><a id="MyLinks1_XMLLink" href="http://www.cnitblog.com/wangk/Rss.aspx"><img src="http://www.cnitblog.com/images/xml.gif" style="border-width:0px;" /></a>
+			<li class = "listitem"><a id="MyLinks1_Admin" class="listitem" href="http://www.cnitblog.com/wangk/admin/EditPosts.aspx">管理</a></li>
+</ul>
+			<table id="Calendar1_entryCal" class="Cal" cellspacing="0" cellpadding="0" title="Calendar" border="0" style="border-width:1px;border-style:solid;border-collapse:collapse;">
+	<tr><td colspan="7" style="background-color:Silver;"><table class="CalTitle" cellspacing="0" border="0" style="width:100%;border-collapse:collapse;">
+		<tr><td class="CalNextPrev" style="width:15%;"><a href="javascript:__doPostBack('Calendar1$entryCal','V2647')" style="color:Black" title="Go to the previous month">&lt;</a></td><td align="center" style="width:70%;">2007年5月</td><td class="CalNextPrev" align="right" style="width:15%;"><a href="javascript:__doPostBack('Calendar1$entryCal','V2708')" style="color:Black" title="Go to the next month">&gt;</a></td></tr>
+	</table></td></tr><tr><th class="CalDayHeader" align="center" abbr="日" scope="col">日</th><th class="CalDayHeader" align="center" abbr="一" scope="col">一</th><th class="CalDayHeader" align="center" abbr="二" scope="col">二</th><th class="CalDayHeader" align="center" abbr="三" scope="col">三</th><th class="CalDayHeader" align="center" abbr="四" scope="col">四</th><th class="CalDayHeader" align="center" abbr="五" scope="col">五</th><th class="CalDayHeader" align="center" abbr="六" scope="col">六</th></tr><tr><td class="CalOtherMonthDay" align="center" style="width:14%;">29</td><td class="CalOtherMonthDay" align="center" style="width:14%;">30</td><td align="center" style="width:14%;">1</td><td align="center" style="width:14%;">2</td><td align="center" style="width:14%;">3</td><td align="center" style="width:14%;">4</td><td class="CalWeekendDay" align="center" style="width:14%;">5</td></tr><tr><td class="CalWeekendDay" align="center" style="width:14%;">6</td><td align="center" style="width:14%;">7</td><td align="center" style="width:14%;">8</td><td align="center" style="width:14%;">9</td><td align="center" style="width:14%;">10</td><td align="center" style="width:14%;">11</td><td class="CalWeekendDay" align="center" style="width:14%;">12</td></tr><tr><td class="CalWeekendDay" align="center" style="width:14%;">13</td><td align="center" style="width:14%;">14</td><td align="center" style="width:14%;">15</td><td align="center" style="width:14%;">16</td><td align="center" style="width:14%;">17</td><td align="center" style="width:14%;">18</td><td class="CalWeekendDay" align="center" style="width:14%;">19</td></tr><tr><td class="CalWeekendDay" align="center" style="width:14%;">20</td><td align="center" style="width:14%;">21</td><td align="center" style="width:14%;">22</td><td align="center" style="width:14%;">23</td><td align="center" style="width:14%;">24</td><td align="center" style="width:14%;">25</td><td class="CalWeekendDay" align="center" style="width:14%;">26</td></tr><tr><td class="CalWeekendDay" align="center" style="width:14%;">27</td><td align="center" style="width:14%;">28</td><td align="center" style="width:14%;"><a href="http://www.cnitblog.com/wangk/archive/2007/05/29.html"><u>29</u></a></td><td align="center" style="width:14%;">30</td><td align="center" style="width:14%;">31</td><td class="CalOtherMonthDay" align="center" style="width:14%;">1</td><td class="CalOtherMonthDay" align="center" style="width:14%;">2</td></tr><tr><td class="CalOtherMonthDay" align="center" style="width:14%;">3</td><td class="CalOtherMonthDay" align="center" style="width:14%;">4</td><td class="CalOtherMonthDay" align="center" style="width:14%;">5</td><td class="CalOtherMonthDay" align="center" style="width:14%;">6</td><td class="CalOtherMonthDay" align="center" style="width:14%;">7</td><td class="CalOtherMonthDay" align="center" style="width:14%;">8</td><td class="CalOtherMonthDay" align="center" style="width:14%;">9</td></tr>
+</table>
+
+			
+<div class = "listtitle">统计</div>
+	<ul class = "list">
+		<li class = "listitem">随笔 - 29
+		<li class = "listitem">文章 - 5
+		<li class = "listitem">评论 - 55
+		<li class = "listitem">引用 - 0
+	</li>
+</ul>
+			
+<div class = "listtitle">公告</div>
+	<ul class = "list">
+		<li class = "listitem">
+			<Div class = "listtitle">
+<table align=center>
+<tr><td>
+  <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="150" height="150" ID="Shockwaveflash1" VIEWASTEXT>
+    <param name="movie" value="http://blog.china-pub.com/uploadfile/20041028215251316.swf">
+    <param name="quality" value="high">
+    <embed src="files/twins2.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="150" height="150"></embed></object>
+  </td></tr>
+</table>
+</Div>
+<b>--------------------------------</b><br>
+<center><b>My MSN：</b><br>JujoKing@hotmail.com</center><br>
+<center><b>励志名言：</b></center><br>
+<DIV align=center>
+<marquee align="JUSTIFY" direction="up" height=80px scrolldelay=80 scrollamount=1><center><font color=#0066ff>
+ 一心向着自己目标前进的人，整个世界都给他让路！<br><b>===========</b><br>
+  必成功的方程式： <br>
+★要有明确地目标★<br>
+★要有详细的计划★<br>
+★要立刻采取行动★<br>
+★要修正你的行动★<br>
+★要坚决坚持到底★<br>
+<b>===========</b><br>
+<br>改变能改变的，接受不能改变的。<br>
+<b>===========</b><br>
+</font>
+</center>
+</marquee>
+</DIV>
+<b>--------------------------------</b><BR>
+<Div class = "listtitle">
+<font color=#ff0000>
+<B>当前访问量:</B><BR>
+</font>
+<script src='http://www.yiluda.net/counter/counter.php?uid=12113&style=19&length=6'></script><br>
+<a href="http://www.yiluda.net" target="_blank">YILUDA免费计数器</a><br>
+<b>------------------</b><BR>
+</center>
+</Div>
+	</li>
+</ul>
+			
+<h3>常用链接</h3>
+<ul>
+		<li><a id="SingleColumn1_ctl00_repeaterLinks_ctl01_lnkLinkItem" href="http://www.cnitblog.com/wangk/MyPosts.html">我的随笔</a></li>
+	
+		<li><a id="SingleColumn1_ctl00_repeaterLinks_ctl02_lnkLinkItem" href="http://www.cnitblog.com/wangk/MyComments.html">我的评论</a></li>
+	
+		<li><a id="SingleColumn1_ctl00_repeaterLinks_ctl03_lnkLinkItem" href="http://www.cnitblog.com/wangk/OtherPosts.html">我参与的随笔</a></li>
+	</ul>
+<H3>留言簿<span style="font-size:11px;font-weight:normal;">(8)</span></H3>
+<ul>
+	<li>
+		<a id="SingleColumn1__9a8049_lnkMessages" href="http://www.cnitblog.com/wangk/Contact.aspx?id=1">给我留言</a>
+	<li>
+		<a id="SingleColumn1__9a8049_lnkPublicMsgView" href="http://www.cnitblog.com/wangk/default.aspx?opt=msg">查看公开留言</a>
+	<li>
+		<a id="SingleColumn1__9a8049_lnkPrivateMsgView" href="http://www.cnitblog.com/wangk/admin/MyMessages.aspx">查看私人留言</a>
+	</li>
+</ul>
+
+		<h1 class = "listtitle">随笔分类<span style="font-size:11px;font-weight:normal">(28)</span></h1>
+		
+				<ul class = "list">
+			
+				<li class = "listitem"><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_Link" class="listitem" href="http://www.cnitblog.com/wangk/category/3793.html">My VC Study(7)</a>  <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_RssLink" title="Subscribe to My VC Study(7)" href="http://www.cnitblog.com/wangk/category/3793.html/rss">(rss)</a></li>
+			
+				<li class = "listitem"><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_Link" class="listitem" href="http://www.cnitblog.com/wangk/category/1507.html">VC Skill(13)</a>  <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_RssLink" title="Subscribe to VC Skill(13)" href="http://www.cnitblog.com/wangk/category/1507.html/rss">(rss)</a></li>
+			
+				<li class = "listitem"><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_Link" class="listitem" href="http://www.cnitblog.com/wangk/category/1512.html">WebSite Link(2)</a>  <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_RssLink" title="Subscribe to WebSite Link(2)" href="http://www.cnitblog.com/wangk/category/1512.html/rss">(rss)</a></li>
+			
+				<li class = "listitem"><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_Link" class="listitem" href="http://www.cnitblog.com/wangk/category/1953.html">Window Admin(1)</a>  <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_RssLink" title="Subscribe to Window Admin(1)" href="http://www.cnitblog.com/wangk/category/1953.html/rss">(rss)</a></li>
+			
+				<li class = "listitem"><a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_Link" class="listitem" href="http://www.cnitblog.com/wangk/category/1841.html">Windows SDK(5)</a>  <a id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_RssLink" title="Subscribe to Windows SDK(5)" href="http://www.cnitblog.com/wangk/category/1841.html/rss">(rss)</a></li>
+			
+				</ul>
+			
+	
+		<h1 class = "listtitle">随笔档案<span style="font-size:11px;font-weight:normal">(29)</span></h1>
+		
+				<ul class = "list">
+			
+				<li class = "listitem"><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_Link" class="listitem" href="http://www.cnitblog.com/wangk/archive/2007/11.html">2007年11月 (1)</a>  </li>
+			
+				<li class = "listitem"><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_Link" class="listitem" href="http://www.cnitblog.com/wangk/archive/2007/05.html">2007年5月 (1)</a>  </li>
+			
+				<li class = "listitem"><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl03_Link" class="listitem" href="http://www.cnitblog.com/wangk/archive/2006/11.html">2006年11月 (2)</a>  </li>
+			
+				<li class = "listitem"><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl04_Link" class="listitem" href="http://www.cnitblog.com/wangk/archive/2006/10.html">2006年10月 (3)</a>  </li>
+			
+				<li class = "listitem"><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl05_Link" class="listitem" href="http://www.cnitblog.com/wangk/archive/2006/09.html">2006年9月 (5)</a>  </li>
+			
+				<li class = "listitem"><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl06_Link" class="listitem" href="http://www.cnitblog.com/wangk/archive/2006/04.html">2006年4月 (1)</a>  </li>
+			
+				<li class = "listitem"><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl07_Link" class="listitem" href="http://www.cnitblog.com/wangk/archive/2006/03.html">2006年3月 (1)</a>  </li>
+			
+				<li class = "listitem"><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl08_Link" class="listitem" href="http://www.cnitblog.com/wangk/archive/2006/02.html">2006年2月 (2)</a>  </li>
+			
+				<li class = "listitem"><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl09_Link" class="listitem" href="http://www.cnitblog.com/wangk/archive/2006/01.html">2006年1月 (3)</a>  </li>
+			
+				<li class = "listitem"><a id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl10_Link" class="listitem" href="http://www.cnitblog.com/wangk/archive/2005/12.html">2005年12月 (10)</a>  </li>
+			
+				</ul>
+			
+	
+		<h1 class = "listtitle">文章分类<span style="font-size:11px;font-weight:normal">(7)</span></h1>
+		
+				<ul class = "list">
+			
+				<li class = "listitem"><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl01_Link" class="listitem" href="http://www.cnitblog.com/wangk/category/1593.html">Driver(3)</a>  <a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl01_RssLink" title="Subscribe to Driver(3)" href="http://www.cnitblog.com/wangk/category/1593.html/rss">(rss)</a></li>
+			
+				<li class = "listitem"><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl02_Link" class="listitem" href="http://www.cnitblog.com/wangk/category/1503.html">Vc Skill(1)</a>  <a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl02_RssLink" title="Subscribe to Vc Skill(1)" href="http://www.cnitblog.com/wangk/category/1503.html/rss">(rss)</a></li>
+			
+				<li class = "listitem"><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl03_Link" class="listitem" href="http://www.cnitblog.com/wangk/category/4991.html">Windows(2)</a>  <a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl03_RssLink" title="Subscribe to Windows(2)" href="http://www.cnitblog.com/wangk/category/4991.html/rss">(rss)</a></li>
+			
+				<li class = "listitem"><a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl04_Link" class="listitem" href="http://www.cnitblog.com/wangk/category/1504.html">高性能服务器(1)</a>  <a id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl04_RssLink" title="Subscribe to 高性能服务器(1)" href="http://www.cnitblog.com/wangk/category/1504.html/rss">(rss)</a></li>
+			
+				</ul>
+			
+	
+		<h1 class = "listtitle">文章档案<span style="font-size:11px;font-weight:normal">(5)</span></h1>
+		
+				<ul class = "list">
+			
+				<li class = "listitem"><a id="SingleColumn1_Categories_CatList_ctl03_LinkList_ctl01_Link" class="listitem" href="http://www.cnitblog.com/wangk/archives/2007/03.html">2007年3月 (1)</a>  </li>
+			
+				<li class = "listitem"><a id="SingleColumn1_Categories_CatList_ctl03_LinkList_ctl02_Link" class="listitem" href="http://www.cnitblog.com/wangk/archives/2006/09.html">2006年9月 (1)</a>  </li>
+			
+				<li class = "listitem"><a id="SingleColumn1_Categories_CatList_ctl03_LinkList_ctl03_Link" class="listitem" href="http://www.cnitblog.com/wangk/archives/2006/03.html">2006年3月 (1)</a>  </li>
+			
+				<li class = "listitem"><a id="SingleColumn1_Categories_CatList_ctl03_LinkList_ctl04_Link" class="listitem" href="http://www.cnitblog.com/wangk/archives/2005/12.html">2005年12月 (2)</a>  </li>
+			
+				</ul>
+			
+	
+		<h1 class = "listtitle">相册</h1>
+		
+				<ul class = "list">
+			
+				<li class = "listitem"><a id="SingleColumn1_Categories_CatList_ctl04_LinkList_ctl01_Link" class="listitem" href="http://www.cnitblog.com/wangk/gallery/1506.html">Timer</a>  </li>
+			
+				</ul>
+			
+	
+		<h1 class = "listtitle">收藏夹<span style="font-size:11px;font-weight:normal">(3)</span></h1>
+		
+				<ul class = "list">
+			
+				<li class = "listitem"><a id="SingleColumn1_Categories_CatList_ctl05_LinkList_ctl01_Link" class="listitem" href="http://www.cnitblog.com/wangk/favorite/1505.html">Study(3)</a>  <a id="SingleColumn1_Categories_CatList_ctl05_LinkList_ctl01_RssLink" title="Subscribe to Study(3)" href="http://www.cnitblog.com/wangk/favorite/1505.html/rss">(rss)</a></li>
+			
+				</ul>
+			
+	
+		<h1 class = "listtitle">网站链接</h1>
+		
+				<ul class = "list">
+			
+				<li class = "listitem"><a id="SingleColumn1_Categories_CatList_ctl06_LinkList_ctl01_Link" class="listitem" href="http://335885.tomore.com" target="_blank">Abc On Tomore</a>  </li>
+			
+				<li class = "listitem"><a id="SingleColumn1_Categories_CatList_ctl06_LinkList_ctl02_Link" class="listitem" href="http://spaces.msn.com/JujoKing/" target="_blank">My MSN Space</a>  </li>
+			
+				<li class = "listitem"><a id="SingleColumn1_Categories_CatList_ctl06_LinkList_ctl03_Link" class="listitem" href="http://darknessknight.ys168.com" target="_blank">我的Web U盘</a>  </li>
+			
+				</ul>
+			
+	
+
+
+<script language="JavaScript">
+function SearchGoogle(key,evt,site)
+		{
+			if(evt.keyCode==13 || evt.keyCode==0 || evt.type =='click')
+			{
+				key.focus();
+				var keystr = encodeURIComponent(key.value);
+				url = "http://www.google.com/search?q=";
+				url = url+keystr;
+				url += "&ie=UTF-8&oe=GB2312&hl=zh-CN&domains="+site+"&sitesearch="+site;
+				window.location=url;
+				return false;
+			}
+		}
+</script>
+<H3>搜索</H3>
+<ul>
+	<li>
+		<li><input style="WIDTH: 130px" type="text" name="q" id="q" onkeydown="return SearchGoogle(document.getElementById('q'),event,'www.cnitblog.com/wangk')">&nbsp;<input onclick="SearchGoogle(document.getElementById('q'),event,'www.cnitblog.com/wangk')" type="button" value="搜索" name="sa">
+	</li>
+</ul>
+
+<h3>最新评论
+	<a id="SingleColumn1__2b73ca8_RSSHyperlink1" href="http://www.cnitblog.com/wangk/CommentsRSS.aspx"><img src="/images/xml.gif" style="border-width:0px;" /></a></h3>
+<div class="RecentComment">
+	
+			<ul>
+		
+			<li style="word-break:break-all">
+				<a id="SingleColumn1__2b73ca8_CommentList_ctl01_Hyperlink1" href="http://www.cnitblog.com/wangk/archive/2009/07/03/6106.html#59809">1. re: 在2K以上系统中挂载盘符</a>
+			</li>
+			<li style="word-break:break-all">
+				评论内容较长,点击标题查看
+			</li>
+			<li style="text-align:right;margin-right:4px">
+				--Programmer</li>
+		
+			<li style="word-break:break-all">
+				<a id="SingleColumn1__2b73ca8_CommentList_ctl02_Hyperlink1" href="http://www.cnitblog.com/wangk/archive/2009/04/08/5410.html#56162">2. re: 如何在程序崩溃时，获取相应的信息</a>
+			</li>
+			<li style="word-break:break-all">
+				楼主你好，能把获取程序崩溃信息的源代码发给我吗？十分感谢！<br>我的邮箱52828272@qq.com
+			</li>
+			<li style="text-align:right;margin-right:4px">
+				--王小宇</li>
+		
+			<li style="word-break:break-all">
+				<a id="SingleColumn1__2b73ca8_CommentList_ctl03_Hyperlink1" href="http://www.cnitblog.com/wangk/archive/2008/11/19/5942.html#51676">3. re: HTTP服务器上断点下载文件</a>
+			</li>
+			<li style="word-break:break-all">
+				评论内容较长,点击标题查看
+			</li>
+			<li style="text-align:right;margin-right:4px">
+				--tangxinfa</li>
+		
+			<li style="word-break:break-all">
+				<a id="SingleColumn1__2b73ca8_CommentList_ctl04_Hyperlink1" href="http://www.cnitblog.com/wangk/archive/2008/04/20/5214.html#42549">4. re: SoftIce使用随笔[未登录]</a>
+			</li>
+			<li style="word-break:break-all">
+				为什么在虚拟机上用softice调试rootkit不合适,请讲解下吧.谢谢
+			</li>
+			<li style="text-align:right;margin-right:4px">
+				--呵呵</li>
+		
+			<li style="word-break:break-all">
+				<a id="SingleColumn1__2b73ca8_CommentList_ctl05_Hyperlink1" href="http://www.cnitblog.com/wangk/archive/2007/10/22/5942.html#35198">5. re: HTTP服务器上断点下载文件</a>
+			</li>
+			<li style="word-break:break-all">
+				文章很好！顶！
+			</li>
+			<li style="text-align:right;margin-right:4px">
+				--阿才</li>
+		
+			</ul>
+		
+</div>
+
+<h3>阅读排行榜</h3>
+<div class="RecentComment">
+	
+			<ul style="word-break:break-all">
+		
+			<li>
+				<a id="SingleColumn1__1c9a5b_TopList_ctl01_Hyperlink1" href="http://www.cnitblog.com/wangk/archive/2005/12/31/5942.aspx">1. HTTP服务器上断点下载文件(4406)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__1c9a5b_TopList_ctl02_Hyperlink1" href="http://www.cnitblog.com/wangk/archive/2005/12/07/5214.aspx">2. SoftIce使用随笔(2656)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__1c9a5b_TopList_ctl03_Hyperlink1" href="http://www.cnitblog.com/wangk/archive/2006/01/10/6106.aspx">3. 在2K以上系统中挂载盘符(2378)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__1c9a5b_TopList_ctl04_Hyperlink1" href="http://www.cnitblog.com/wangk/archive/2005/12/14/5369.aspx">4. 如何调试MFC中的内存泄漏(1396)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__1c9a5b_TopList_ctl05_Hyperlink1" href="http://www.cnitblog.com/wangk/archive/2005/12/14/5377.aspx">5. 使用GetPrivateProfile系列函数的困惑(1318)</a>
+			</li>
+		
+			</ul>
+		
+</div>
+
+<h3>评论排行榜</h3>
+<div class="RecentComment">
+	
+			<ul style="word-break:break-all">
+		
+			<li>
+				<a id="SingleColumn1__1ef5ac9_TopList_ctl01_Hyperlink1" href="http://www.cnitblog.com/wangk/archive/2006/01/10/6106.aspx">1. 在2K以上系统中挂载盘符(16)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__1ef5ac9_TopList_ctl02_Hyperlink1" href="http://www.cnitblog.com/wangk/archive/2005/12/31/5942.aspx">2. HTTP服务器上断点下载文件(10)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__1ef5ac9_TopList_ctl03_Hyperlink1" href="http://www.cnitblog.com/wangk/archive/2005/12/14/5377.aspx">3. 使用GetPrivateProfile系列函数的困惑(6)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__1ef5ac9_TopList_ctl04_Hyperlink1" href="http://www.cnitblog.com/wangk/archive/2005/12/15/5410.aspx">4. 如何在程序崩溃时，获取相应的信息(6)</a>
+			</li>
+		
+			<li>
+				<a id="SingleColumn1__1ef5ac9_TopList_ctl05_Hyperlink1" href="http://www.cnitblog.com/wangk/archive/2005/12/07/5214.aspx">5. SoftIce使用随笔(5)</a>
+			</li>
+		
+			</ul>
+		
+</div>
+
+			
+		<div class="spacer">&nbsp;</div>
+		</div>
+		<div class="centercolumn">
+			
+					
+<div class = "singlepost">
+	<div class = "posttitle">
+		<a id="viewpost1_TitleUrl" class="singleposttitle" href="http://www.cnitblog.com/wangk/archive/2005/12/31/5942.html">HTTP服务器上断点下载文件</a>
+	</div>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;从HTTP服务器上下载一个文件有很多方法，“热心”的微软提供了 WinInet 类，用起来也很方便。当然，我们也可以自己实现这些功能，通过格式化请求头很容易就能实现断点续传和检查更新等等功能 。 
+<OL>
+<LI>连接主机 
+<LI>格式化请求头 
+<LI>设置接收,发送超时 <BR>　　</LI></OL>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;要想从服务器下载文件，首先要向服务器发送一个请求。HTTP 请求头由若干行字符串组成。下面结合实例说说 HTTP 请求头的格式。假设要下载 http://www.sina.com.cn/index.html 这个网页 ，那么请求头的写法如下：<BR><BR>第1行：方法，请求的内容，HTTP协议的版本<BR>下载一般可以用GET方法，请求的内容是“/index.html”，HTTP协议的版本是指浏览器支持的版本，对于下载软件来说无所谓，所以用1.1版 “HTTP/1.1”；<BR>“GET /index.html HTTP/1.1”<BR><BR>第2行：主机名，格式为“Host:主机”<BR>在这个例子中是：“Host:www.sina.com.cn”<BR><BR>第3行：接受的数据类型，下载软件当然要接收所有的数据类型，所以：<BR>“Accept:*/*”<BR><BR>第4行：指定浏览器的类型<BR>有些服务器会根据客户服务器种类的不同会增加或减少一些内容，在这个例子中可以这样写：</P><PRE>“User-Agent:Mozilla/4.0 (compatible; MSIE 5.00; Windows 98)”</PRE>
+<P>第5行：连接设置<BR>设定为一直保持连接：“Connection:Keep-Alive”<BR><BR>第6行：若要实现断点续传则要指定从什么位置起接收数据，格式如下：</P><PRE>“Range: bytes=起始位置 - 终止位置”</PRE>
+<P>比如要读前500个字节可以这样写：“Range: bytes=0 - 499”；从第 1000 个字节起开始下载：</P><PRE>“Range: bytes=999 -”</PRE>
+<P>最后，别忘了加上一行空行，表示请求头结束。整个请求头如下：</P><PRE>GET /index.html HTTP/1.1
+Host:www.sina.com.cn
+Accept:*/*
+User-Agent:Mozilla/4.0 (compatible; MSIE 5.00; Windows 98)
+Connection:Keep-Alive<BR>下面用例子看看如何进行断点的下载吧<BR><BR><BR><BR><BR><BR><BR><DIV style="BORDER-RIGHT: #cccccc 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #cccccc 1px solid; PADDING-LEFT: 4px; FONT-SIZE: 13px; PADDING-BOTTOM: 4px; BORDER-LEFT: #cccccc 1px solid; WIDTH: 98%; WORD-BREAK: break-all; PADDING-TOP: 4px; BORDER-BOTTOM: #cccccc 1px solid; BACKGROUND-COLOR: #eeeeee"><SPAN style="COLOR: #008000">//</SPAN><SPAN style="COLOR: #008000">&nbsp;DownloadFile.h:&nbsp;interface&nbsp;for&nbsp;the&nbsp;CDownloadFile&nbsp;class.</SPAN><SPAN style="COLOR: #008000"><BR>//<BR>//</SPAN><SPAN style="COLOR: #008000">////////////////////////////////////////////////////////////////////</SPAN><SPAN style="COLOR: #008000"><BR></SPAN><SPAN style="COLOR: #000000"><BR>#</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">!</SPAN><SPAN style="COLOR: #000000">defined(AFX_DOWNLOADFILE_H__E9A59779_BEF9_4A78_8D0E_ED8C9498E07C__INCLUDED_)<BR>#define&nbsp;AFX_DOWNLOADFILE_H__E9A59779_BEF9_4A78_8D0E_ED8C9498E07C__INCLUDED_<BR><BR>#</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;_MSC_VER&nbsp;</SPAN><SPAN style="COLOR: #000000">&gt;</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">1000</SPAN><SPAN style="COLOR: #000000"><BR>#pragma&nbsp;once<BR>#endif&nbsp;</SPAN><SPAN style="COLOR: #008000">//</SPAN><SPAN style="COLOR: #008000">&nbsp;_MSC_VER&nbsp;&gt;&nbsp;1000</SPAN><SPAN style="COLOR: #008000"><BR></SPAN><SPAN style="COLOR: #000000"><BR>#define&nbsp;NOTIFY_MSG_WPARAM_GENDOWNFILEID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #000000">0x01</SPAN><SPAN style="COLOR: #000000"><BR><BR>#define&nbsp;NOTIFY_MSG_LOW_WPARAM_FULLSIZE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #000000">0x10</SPAN><SPAN style="COLOR: #000000"><BR>#define&nbsp;NOTIFY_MSG_LOW_WPARAM_CURRENTSIZE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #000000">0x20</SPAN><SPAN style="COLOR: #000000"><BR>#define&nbsp;NOTIFY_MSG_LOW_WPARAM_DOWNSIZE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #000000">0x30</SPAN><SPAN style="COLOR: #000000"><BR>#define&nbsp;NOTIFY_MSG_LOW_WPARAM_DOWNSPEED&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #000000">0x40</SPAN><SPAN style="COLOR: #000000"><BR><BR>class&nbsp;CDownloadFile&nbsp;&nbsp;<BR>{<BR>public:<BR>&nbsp;&nbsp;&nbsp;&nbsp;BOOL&nbsp;OpenRedirectHttpURL(CString&nbsp;</SPAN><SPAN style="COLOR: #000000">&amp;</SPAN><SPAN style="COLOR: #000000">strOldLocation,CInternetSession&nbsp;</SPAN><SPAN style="COLOR: #000000">&amp;</SPAN><SPAN style="COLOR: #000000">cSession);<BR>&nbsp;&nbsp;&nbsp;&nbsp;BOOL&nbsp;DownLoadFile(LPCTSTR&nbsp;lpFileURL,LPCTSTR&nbsp;lpSaveFile);<BR>&nbsp;&nbsp;&nbsp;&nbsp;CDownloadFile();<BR>&nbsp;&nbsp;&nbsp;&nbsp;virtual&nbsp;</SPAN><SPAN style="COLOR: #000000">~</SPAN><SPAN style="COLOR: #000000">CDownloadFile();<BR>&nbsp;&nbsp;&nbsp;&nbsp;LPCTSTR&nbsp;GetSavedFileName()&nbsp;{&nbsp;</SPAN><SPAN style="COLOR: #0000ff">return</SPAN><SPAN style="COLOR: #000000">&nbsp;m_strSaveToFile;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;LPCTSTR&nbsp;GetDownURL()&nbsp;{&nbsp;</SPAN><SPAN style="COLOR: #0000ff">return</SPAN><SPAN style="COLOR: #000000">&nbsp;m_strFileURL;}<BR><BR>public:<BR>&nbsp;&nbsp;&nbsp;&nbsp;WORD&nbsp;GenFileID();<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">void</SPAN><SPAN style="COLOR: #000000">&nbsp;RegisterNotifyWindow(DWORD&nbsp;dwThreadID,HWND&nbsp;hWnd,DWORD&nbsp;dwMsg);<BR>&nbsp;&nbsp;&nbsp;&nbsp;BOOL&nbsp;GetUNCFile();<BR>&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;m_bForceReload;<BR>&nbsp;&nbsp;&nbsp;&nbsp;DWORD&nbsp;m_TimeOut;<BR>&nbsp;&nbsp;&nbsp;&nbsp;WORD&nbsp;m_wFileID;<BR><BR>protected:<BR>&nbsp;&nbsp;&nbsp;&nbsp;DWORD&nbsp;m_dwThreadID;<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">void</SPAN><SPAN style="COLOR: #000000">&nbsp;PostNotifyMessage(WPARAM&nbsp;wParam,&nbsp;LPARAM&nbsp;lParam);<BR>&nbsp;&nbsp;&nbsp;&nbsp;DWORD&nbsp;m_dwMsgID;<BR>&nbsp;&nbsp;&nbsp;&nbsp;HWND&nbsp;m_hNotify;<BR>&nbsp;&nbsp;&nbsp;&nbsp;BOOL&nbsp;GetFtpFile(CInternetSession&nbsp;</SPAN><SPAN style="COLOR: #000000">&amp;</SPAN><SPAN style="COLOR: #000000">cSession);<BR>&nbsp;&nbsp;&nbsp;&nbsp;BOOL&nbsp;GetHttpFile(CInternetSession&nbsp;</SPAN><SPAN style="COLOR: #000000">&amp;</SPAN><SPAN style="COLOR: #000000">cSession);<BR>&nbsp;&nbsp;&nbsp;&nbsp;CString&nbsp;m_strTmpFileName;<BR>&nbsp;&nbsp;&nbsp;&nbsp;CString&nbsp;m_strFileURL;<BR>&nbsp;&nbsp;&nbsp;&nbsp;CString&nbsp;m_strSaveToFile;<BR>&nbsp;&nbsp;&nbsp;&nbsp;CString&nbsp;&nbsp;&nbsp;&nbsp;m_rawHeaders;<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">float</SPAN><SPAN style="COLOR: #000000">&nbsp;&nbsp;m_transferRate;<BR>&nbsp;&nbsp;&nbsp;&nbsp;DWORD&nbsp;&nbsp;&nbsp;&nbsp;m_infoStatusCode;<BR>};<BR><BR>#endif&nbsp;</SPAN><SPAN style="COLOR: #008000">//</SPAN><SPAN style="COLOR: #008000">&nbsp;!defined(AFX_DOWNLOADFILE_H__E9A59779_BEF9_4A78_8D0E_ED8C9498E07C__INCLUDED_)</SPAN></DIV><BR><BR><DIV style="BORDER-RIGHT: #cccccc 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #cccccc 1px solid; PADDING-LEFT: 4px; FONT-SIZE: 13px; PADDING-BOTTOM: 4px; BORDER-LEFT: #cccccc 1px solid; WIDTH: 98%; WORD-BREAK: break-all; PADDING-TOP: 4px; BORDER-BOTTOM: #cccccc 1px solid; BACKGROUND-COLOR: #eeeeee"><SPAN style="COLOR: #008000">//</SPAN><SPAN style="COLOR: #008000">&nbsp;DownloadFile.cpp:&nbsp;implementation&nbsp;of&nbsp;the&nbsp;CDownloadFile&nbsp;class.</SPAN><SPAN style="COLOR: #008000"><BR>//<BR>//</SPAN><SPAN style="COLOR: #008000">////////////////////////////////////////////////////////////////////</SPAN><SPAN style="COLOR: #008000"><BR></SPAN><SPAN style="COLOR: #000000"><BR>#include&nbsp;</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">stdafx.h</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000"><BR>#include&nbsp;</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">DownloadFile.h</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000"><BR><BR>#pragma&nbsp;comment(&nbsp;lib,</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">Wininet.lib</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">&nbsp;)<BR><BR>#include&nbsp;</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">shlwapi.h</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000"><BR>#pragma&nbsp;comment(&nbsp;lib,</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">shlwapi.lib</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">&nbsp;)<BR><BR>#ifdef&nbsp;_DEBUG<BR>#undef&nbsp;THIS_FILE<BR>static&nbsp;</SPAN><SPAN style="COLOR: #0000ff">char</SPAN><SPAN style="COLOR: #000000">&nbsp;THIS_FILE[]</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">__FILE__;<BR>#define&nbsp;</SPAN><SPAN style="COLOR: #0000ff">new</SPAN><SPAN style="COLOR: #000000">&nbsp;DEBUG_NEW<BR>#endif<BR><BR>#define&nbsp;BUFFER_SIZE&nbsp;</SPAN><SPAN style="COLOR: #000000">4095</SPAN><SPAN style="COLOR: #000000"><BR><BR>const&nbsp;TCHAR&nbsp;szHeaders[]&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;_T(</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">Accept:&nbsp;*/*\r\nUser-Agent:&nbsp;&nbsp;Mozilla/4.0&nbsp;(compatible;&nbsp;MSIE&nbsp;5.00;&nbsp;Windows&nbsp;98)\r\n</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">);<BR><BR></SPAN><SPAN style="COLOR: #008000">//</SPAN><SPAN style="COLOR: #008000">////////////////////////////////////////////////////////////////////</SPAN><SPAN style="COLOR: #008000"><BR>//</SPAN><SPAN style="COLOR: #008000">&nbsp;Construction/Destruction</SPAN><SPAN style="COLOR: #008000"><BR>//</SPAN><SPAN style="COLOR: #008000">////////////////////////////////////////////////////////////////////</SPAN><SPAN style="COLOR: #008000"><BR></SPAN><SPAN style="COLOR: #000000"><BR>CDownloadFile::CDownloadFile()<BR>{<BR>&nbsp;&nbsp;&nbsp;&nbsp;m_TimeOut&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;m_bForceReload&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">true</SPAN><SPAN style="COLOR: #000000">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;m_dwThreadID&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;m_hNotify&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;NULL;<BR>&nbsp;&nbsp;&nbsp;&nbsp;m_dwMsgID&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;m_wFileID&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">;<BR>}<BR><BR>CDownloadFile::</SPAN><SPAN style="COLOR: #000000">~</SPAN><SPAN style="COLOR: #000000">CDownloadFile()<BR>{<BR><BR>}<BR><BR>BOOL&nbsp;CDownloadFile::DownLoadFile(LPCTSTR&nbsp;lpFileURL,&nbsp;LPCTSTR&nbsp;lpSaveFile)<BR>{<BR>&nbsp;&nbsp;&nbsp;&nbsp;BOOL&nbsp;bRet&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;FALSE;<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(&nbsp;</SPAN><SPAN style="COLOR: #000000">!</SPAN><SPAN style="COLOR: #000000">::PathIsURL(lpFileURL)&nbsp;)<BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">return</SPAN><SPAN style="COLOR: #000000">&nbsp;bRet;<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;m_strSaveToFile&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;lpSaveFile;<BR>&nbsp;&nbsp;&nbsp;&nbsp;m_strFileURL&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;lpFileURL;<BR>&nbsp;&nbsp;&nbsp;&nbsp;m_strTmpFileName&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;lpSaveFile;<BR>&nbsp;&nbsp;&nbsp;&nbsp;m_strTmpFileName&nbsp;</SPAN><SPAN style="COLOR: #000000">+=</SPAN><SPAN style="COLOR: #000000">&nbsp;_T(</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">.df!</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">);<BR>&nbsp;&nbsp;&nbsp;&nbsp;CString&nbsp;strServer,strObject;INTERNET_PORT&nbsp;nPort;<BR>&nbsp;&nbsp;&nbsp;&nbsp;CString&nbsp;strAgentCaption&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;&nbsp;_T(</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">Update&nbsp;Download&nbsp;</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">)&nbsp;;<BR>&nbsp;&nbsp;&nbsp;&nbsp;strAgentCaption&nbsp;</SPAN><SPAN style="COLOR: #000000">+=</SPAN><SPAN style="COLOR: #000000">&nbsp;::PathFindFileName(lpSaveFile);<BR>&nbsp;&nbsp;&nbsp;&nbsp;DWORD&nbsp;dwFlags&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;InternetGetConnectedState(</SPAN><SPAN style="COLOR: #000000">&amp;</SPAN><SPAN style="COLOR: #000000">dwFlags,&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">);<BR>&nbsp;&nbsp;&nbsp;&nbsp;CInternetSession&nbsp;session&nbsp;(strAgentCaption,&nbsp;</SPAN><SPAN style="COLOR: #000000">1</SPAN><SPAN style="COLOR: #000000">,<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(dwFlags&nbsp;</SPAN><SPAN style="COLOR: #000000">&amp;</SPAN><SPAN style="COLOR: #000000">&nbsp;INTERNET_CONNECTION_PROXY)&nbsp;</SPAN><SPAN style="COLOR: #000000">==</SPAN><SPAN style="COLOR: #000000">&nbsp;INTERNET_CONNECTION_PROXY&nbsp;</SPAN><SPAN style="COLOR: #000000">?</SPAN><SPAN style="COLOR: #000000">&nbsp;INTERNET_OPEN_TYPE_PRECONFIG&nbsp;:&nbsp;INTERNET_OPEN_TYPE_PRECONFIG_WITH_NO_AUTOPROXY,<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NULL,&nbsp;NULL,&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">);<BR>&nbsp;&nbsp;&nbsp;&nbsp;AfxParseURL(m_strFileURL,dwFlags,strServer,strObject,nPort);<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(m_TimeOut&nbsp;</SPAN><SPAN style="COLOR: #000000">!=</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;session.SetOption(INTERNET_OPTION_DATA_RECEIVE_TIMEOUT,&nbsp;m_TimeOut);<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">(&nbsp;</SPAN><SPAN style="COLOR: #000000">!</SPAN><SPAN style="COLOR: #000000">m_wFileID&nbsp;)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_wFileID&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;GenFileID();<BR>&nbsp;&nbsp;&nbsp;&nbsp;PostNotifyMessage(NOTIFY_MSG_WPARAM_GENDOWNFILEID,m_wFileID);<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">try</SPAN><SPAN style="COLOR: #000000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(&nbsp;dwFlags</SPAN><SPAN style="COLOR: #000000">==</SPAN><SPAN style="COLOR: #000000">&nbsp;AFX_INET_SERVICE_HTTP&nbsp;)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bRet&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;GetHttpFile(session);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">else</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">(&nbsp;dwFlags</SPAN><SPAN style="COLOR: #000000">==</SPAN><SPAN style="COLOR: #000000">&nbsp;AFX_INET_SERVICE_FTP&nbsp;)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bRet&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;GetFtpFile(session);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">else</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">(&nbsp;dwFlags</SPAN><SPAN style="COLOR: #000000">==</SPAN><SPAN style="COLOR: #000000">&nbsp;AFX_INET_SERVICE_FILE&nbsp;)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">(&nbsp;UrlIsFileUrl(m_strFileURL)&nbsp;)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bRet&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;GetUNCFile();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">else</SPAN><SPAN style="COLOR: #000000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">catch</SPAN><SPAN style="COLOR: #000000">&nbsp;(CException</SPAN><SPAN style="COLOR: #000000">*</SPAN><SPAN style="COLOR: #000000">&nbsp;pEx)<BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TCHAR&nbsp;szErrorMsg[MAX_PATH]&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;{</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">};<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pEx</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">GetErrorMessage(szErrorMsg,&nbsp;MAX_PATH);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TRACE(&nbsp;_T(</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">Exception:&nbsp;%s\n</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">)&nbsp;,&nbsp;szErrorMsg);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pEx</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">Delete();<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;session.Close();<BR>&nbsp;&nbsp;&nbsp;&nbsp;m_wFileID&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(bRet)<BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(</SPAN><SPAN style="COLOR: #000000">!</SPAN><SPAN style="COLOR: #000000">::MoveFileEx(m_strTmpFileName,m_strSaveToFile,MOVEFILE_REPLACE_EXISTING)&nbsp;)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sleep(</SPAN><SPAN style="COLOR: #000000">1000</SPAN><SPAN style="COLOR: #000000">);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::MoveFileEx(m_strTmpFileName,m_strSaveToFile,MOVEFILE_REPLACE_EXISTING);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">return</SPAN><SPAN style="COLOR: #000000">&nbsp;bRet;<BR>}<BR><BR>BOOL&nbsp;CDownloadFile::GetHttpFile(CInternetSession&nbsp;</SPAN><SPAN style="COLOR: #000000">&amp;</SPAN><SPAN style="COLOR: #000000">cSession)<BR>{<BR>&nbsp;&nbsp;&nbsp;&nbsp;BOOL&nbsp;bRet&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;FALSE;<BR>&nbsp;&nbsp;&nbsp;&nbsp;CFile&nbsp;m_TmpFile;<BR>&nbsp;&nbsp;&nbsp;&nbsp;CFileException&nbsp;fileException;<BR>&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(&nbsp;</SPAN><SPAN style="COLOR: #000000">!</SPAN><SPAN style="COLOR: #000000">m_TmpFile.Open&nbsp;(m_strTmpFileName,&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CFile::modeCreate&nbsp;</SPAN><SPAN style="COLOR: #000000">|</SPAN><SPAN style="COLOR: #000000">&nbsp;CFile::modeNoTruncate&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #000000">|</SPAN><SPAN style="COLOR: #000000">&nbsp;CFile::modeReadWrite<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #000000">|</SPAN><SPAN style="COLOR: #000000">&nbsp;CFile::shareDenyWrite&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #000000">|</SPAN><SPAN style="COLOR: #000000">&nbsp;CFile::typeBinary,<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #000000">&amp;</SPAN><SPAN style="COLOR: #000000">fileException&nbsp;)&nbsp;)<BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TRACE(&nbsp;_T(</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">Open&nbsp;File&nbsp;failed:&nbsp;%d\n</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">),&nbsp;fileException.m_cause&nbsp;);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">return</SPAN><SPAN style="COLOR: #000000">&nbsp;bRet;<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;CString&nbsp;strRangeQuest;<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(m_TmpFile.GetLength()</SPAN><SPAN style="COLOR: #000000">&gt;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">)<BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PostNotifyMessage(MAKEWPARAM(NOTIFY_MSG_LOW_WPARAM_CURRENTSIZE,m_wFileID),m_TmpFile.GetLength());<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_TmpFile.SeekToEnd();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strRangeQuest.Format(&nbsp;_T(</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">%sRange:&nbsp;bytes=%d-\r\n</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">),&nbsp;szHeaders,m_TmpFile.GetLength());<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">else</SPAN><SPAN style="COLOR: #000000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strRangeQuest&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;szHeaders;<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;DWORD&nbsp;dwCount&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;CHttpFile</SPAN><SPAN style="COLOR: #000000">*</SPAN><SPAN style="COLOR: #000000">&nbsp;pFile&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;NULL;<BR>&nbsp;&nbsp;&nbsp;&nbsp;CString&nbsp;strTmpURL&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;m_strFileURL;<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">try</SPAN><SPAN style="COLOR: #000000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DWORD&nbsp;dwFlags&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;INTERNET_FLAG_TRANSFER_BINARY&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #000000">|</SPAN><SPAN style="COLOR: #000000">INTERNET_FLAG_DONT_CACHE<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #000000">|</SPAN><SPAN style="COLOR: #000000">INTERNET_FLAG_PRAGMA_NOCACHE</SPAN><SPAN style="COLOR: #008000"><BR></SPAN><SPAN style="COLOR: #000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(m_bForceReload)&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dwFlags&nbsp;</SPAN><SPAN style="COLOR: #000000">|=</SPAN><SPAN style="COLOR: #000000">&nbsp;INTERNET_FLAG_RELOAD;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #008000">//</SPAN><SPAN style="COLOR: #008000">Here&nbsp;Find&nbsp;URLFile&nbsp;Redirect.</SPAN><SPAN style="COLOR: #008000"><BR>//</SPAN><SPAN style="COLOR: #008000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OpenRedirectHttpURL(strTmpURL,cSession);</SPAN><SPAN style="COLOR: #008000"><BR></SPAN><SPAN style="COLOR: #000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pFile&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;(CHttpFile</SPAN><SPAN style="COLOR: #000000">*</SPAN><SPAN style="COLOR: #000000">)&nbsp;cSession.OpenURL(strTmpURL,&nbsp;</SPAN><SPAN style="COLOR: #000000">1</SPAN><SPAN style="COLOR: #000000">,&nbsp;dwFlags,strRangeQuest,&nbsp;</SPAN><SPAN style="COLOR: #000000">-</SPAN><SPAN style="COLOR: #000000">1</SPAN><SPAN style="COLOR: #000000">);<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">catch</SPAN><SPAN style="COLOR: #000000">&nbsp;(CInternetException</SPAN><SPAN style="COLOR: #000000">*</SPAN><SPAN style="COLOR: #000000">&nbsp;e)<BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TCHAR&nbsp;&nbsp;&nbsp;szCause[MAX_PATH]&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;{</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">};<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">GetErrorMessage(szCause,&nbsp;MAX_PATH);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">Delete();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">delete</SPAN><SPAN style="COLOR: #000000">&nbsp;pFile;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pFile&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;NULL;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">return</SPAN><SPAN style="COLOR: #000000">&nbsp;bRet;<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;COleDateTime&nbsp;startTime&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;COleDateTime::GetCurrentTime();<BR>&nbsp;&nbsp;&nbsp;&nbsp;DWORD&nbsp;dwHttpFileSize&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(pFile)<BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BYTE&nbsp;buffer[BUFFER_SIZE</SPAN><SPAN style="COLOR: #000000">+</SPAN><SPAN style="COLOR: #000000">1</SPAN><SPAN style="COLOR: #000000">]&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;{</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">};<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">try</SPAN><SPAN style="COLOR: #000000">&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UINT&nbsp;nRead&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pFile</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">QueryInfo(HTTP_QUERY_CONTENT_LENGTH&nbsp;</SPAN><SPAN style="COLOR: #000000">|</SPAN><SPAN style="COLOR: #000000">&nbsp;HTTP_QUERY_FLAG_NUMBER,dwHttpFileSize);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PostNotifyMessage(MAKEWPARAM(NOTIFY_MSG_LOW_WPARAM_FULLSIZE,m_wFileID),dwHttpFileSize);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TRACE(&nbsp;_T(</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">Totoal&nbsp;Length&nbsp;is&nbsp;%d\n</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">),&nbsp;dwHttpFileSize&nbsp;);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dwCount&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">do</SPAN><SPAN style="COLOR: #000000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nRead&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;pFile</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">Read(buffer,&nbsp;BUFFER_SIZE);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(nRead&nbsp;</SPAN><SPAN style="COLOR: #000000">&gt;</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;buffer[nRead]&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_TmpFile.Write(buffer,nRead);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;COleDateTimeSpan&nbsp;elapsed&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;COleDateTime::GetCurrentTime()&nbsp;</SPAN><SPAN style="COLOR: #000000">-</SPAN><SPAN style="COLOR: #000000">&nbsp;startTime;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">double</SPAN><SPAN style="COLOR: #000000">&nbsp;dSecs&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;elapsed.GetTotalSeconds();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PostNotifyMessage(MAKEWPARAM(NOTIFY_MSG_LOW_WPARAM_DOWNSIZE,m_wFileID),dwCount);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(dSecs&nbsp;</SPAN><SPAN style="COLOR: #000000">&gt;</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0.0</SPAN><SPAN style="COLOR: #000000">)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dwCount&nbsp;</SPAN><SPAN style="COLOR: #000000">+=</SPAN><SPAN style="COLOR: #000000">&nbsp;nRead;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_transferRate&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;(</SPAN><SPAN style="COLOR: #0000ff">float</SPAN><SPAN style="COLOR: #000000">)&nbsp;(&nbsp;dwCount&nbsp;</SPAN><SPAN style="COLOR: #000000">/</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">1024.0</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">/</SPAN><SPAN style="COLOR: #000000">&nbsp;dSecs&nbsp;);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TRACE(</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">Read&nbsp;%d&nbsp;bytes&nbsp;(%0.1f&nbsp;Kb/s)\n</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">,&nbsp;dwCount,&nbsp;m_transferRate&nbsp;);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">else</SPAN><SPAN style="COLOR: #000000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TRACE(</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">Read&nbsp;%d&nbsp;bytes\n</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">,&nbsp;dwCount);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_transferRate&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;(</SPAN><SPAN style="COLOR: #0000ff">float</SPAN><SPAN style="COLOR: #000000">)&nbsp;(&nbsp;dwCount&nbsp;</SPAN><SPAN style="COLOR: #000000">/</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">1024.0</SPAN><SPAN style="COLOR: #000000">&nbsp;);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PostNotifyMessage(MAKEWPARAM(NOTIFY_MSG_LOW_WPARAM_DOWNSPEED,m_wFileID),(LPARAM)m_transferRate);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">while</SPAN><SPAN style="COLOR: #000000">&nbsp;(nRead&nbsp;</SPAN><SPAN style="COLOR: #000000">&gt;</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bRet&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;TRUE;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">catch</SPAN><SPAN style="COLOR: #000000">&nbsp;(CFileException&nbsp;</SPAN><SPAN style="COLOR: #000000">*</SPAN><SPAN style="COLOR: #000000">e)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TCHAR&nbsp;&nbsp;&nbsp;szCause[MAX_PATH]&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;{</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">};<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">GetErrorMessage(szCause,&nbsp;MAX_PATH);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TRACE(</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">ErrorMsg&nbsp;:&nbsp;%s\n</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">,&nbsp;szCause);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">Delete();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">delete</SPAN><SPAN style="COLOR: #000000">&nbsp;pFile;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_TmpFile.Close();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">return</SPAN><SPAN style="COLOR: #000000">&nbsp;FALSE;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pFile</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">QueryInfoStatusCode(m_infoStatusCode);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pFile</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">QueryInfo(HTTP_QUERY_RAW_HEADERS&nbsp;,m_rawHeaders);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pFile</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">Close();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_TmpFile.Close();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">delete</SPAN><SPAN style="COLOR: #000000">&nbsp;pFile;<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">return</SPAN><SPAN style="COLOR: #000000">&nbsp;bRet;<BR>}<BR><BR>BOOL&nbsp;CDownloadFile::OpenRedirectHttpURL(CString&nbsp;</SPAN><SPAN style="COLOR: #000000">&amp;</SPAN><SPAN style="COLOR: #000000">strOldLocation,CInternetSession&nbsp;</SPAN><SPAN style="COLOR: #000000">&amp;</SPAN><SPAN style="COLOR: #000000">cSession)<BR>{<BR>&nbsp;&nbsp;&nbsp;&nbsp;BOOL&nbsp;bRet&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;FALSE;<BR>&nbsp;&nbsp;&nbsp;&nbsp;CHttpFile&nbsp;</SPAN><SPAN style="COLOR: #000000">*</SPAN><SPAN style="COLOR: #000000">pFile&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;NULL;<BR>&nbsp;&nbsp;&nbsp;&nbsp;CHttpConnection</SPAN><SPAN style="COLOR: #000000">*</SPAN><SPAN style="COLOR: #000000">&nbsp;pServer&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;NULL;<BR>&nbsp;&nbsp;&nbsp;&nbsp;CString&nbsp;strServerName,strObject;<BR>&nbsp;&nbsp;&nbsp;&nbsp;INTERNET_PORT&nbsp;nPort&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;DWORD&nbsp;dwServiceType&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(</SPAN><SPAN style="COLOR: #000000">!</SPAN><SPAN style="COLOR: #000000">AfxParseURL(strOldLocation,&nbsp;dwServiceType,&nbsp;strServerName,&nbsp;strObject,&nbsp;nPort)&nbsp;</SPAN><SPAN style="COLOR: #000000">||</SPAN><SPAN style="COLOR: #000000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dwServiceType&nbsp;</SPAN><SPAN style="COLOR: #000000">!=</SPAN><SPAN style="COLOR: #000000">&nbsp;INTERNET_SERVICE_HTTP)<BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TRACE(&nbsp;_T(</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">Not&nbsp;A&nbsp;Http&nbsp;Quest!\n</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">)&nbsp;);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">return</SPAN><SPAN style="COLOR: #000000">&nbsp;bRet;<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;pServer&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;cSession.GetHttpConnection(strServerName,&nbsp;nPort);<BR>&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;pFile&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;pServer</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">OpenRequest(CHttpConnection::HTTP_VERB_GET,<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strObject,&nbsp;NULL,&nbsp;</SPAN><SPAN style="COLOR: #000000">1</SPAN><SPAN style="COLOR: #000000">,&nbsp;NULL,&nbsp;NULL,&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INTERNET_FLAG_EXISTING_CONNECT&nbsp;</SPAN><SPAN style="COLOR: #000000">|</SPAN><SPAN style="COLOR: #000000">&nbsp;INTERNET_FLAG_NO_AUTO_REDIRECT);<BR>&nbsp;&nbsp;&nbsp;&nbsp;pFile</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">AddRequestHeaders(szHeaders);<BR>&nbsp;&nbsp;&nbsp;&nbsp;pFile</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">SendRequest();<BR>&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;DWORD&nbsp;dwRet;<BR>&nbsp;&nbsp;&nbsp;&nbsp;pFile</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">QueryInfoStatusCode(dwRet);<BR>&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #008000">//</SPAN><SPAN style="COLOR: #008000">&nbsp;if&nbsp;access&nbsp;was&nbsp;denied,&nbsp;prompt&nbsp;the&nbsp;user&nbsp;for&nbsp;the&nbsp;password</SPAN><SPAN style="COLOR: #008000"><BR></SPAN><SPAN style="COLOR: #000000">&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(dwRet&nbsp;</SPAN><SPAN style="COLOR: #000000">==</SPAN><SPAN style="COLOR: #000000">&nbsp;HTTP_STATUS_DENIED)<BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DWORD&nbsp;dwPrompt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dwPrompt&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;pFile</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">ErrorDlg(NULL,&nbsp;ERROR_INTERNET_INCORRECT_PASSWORD,<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FLAGS_ERROR_UI_FLAGS_GENERATE_DATA&nbsp;</SPAN><SPAN style="COLOR: #000000">|</SPAN><SPAN style="COLOR: #000000">&nbsp;FLAGS_ERROR_UI_FLAGS_CHANGE_OPTIONS,&nbsp;NULL);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #008000">//</SPAN><SPAN style="COLOR: #008000">&nbsp;if&nbsp;the&nbsp;user&nbsp;cancelled&nbsp;the&nbsp;dialog,&nbsp;bail&nbsp;out</SPAN><SPAN style="COLOR: #008000"><BR></SPAN><SPAN style="COLOR: #000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(dwPrompt&nbsp;</SPAN><SPAN style="COLOR: #000000">!=</SPAN><SPAN style="COLOR: #000000">&nbsp;ERROR_INTERNET_FORCE_RETRY)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TRACE(&nbsp;_T(</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">Access&nbsp;denied:&nbsp;Invalid&nbsp;password\n</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">)&nbsp;);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #008000">//</SPAN><SPAN style="COLOR: #008000">&nbsp;close&nbsp;up&nbsp;the&nbsp;redirected&nbsp;site</SPAN><SPAN style="COLOR: #008000"><BR></SPAN><SPAN style="COLOR: #000000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pFile</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">Close();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">delete</SPAN><SPAN style="COLOR: #000000">&nbsp;pFile;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pServer</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">Close();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">delete</SPAN><SPAN style="COLOR: #000000">&nbsp;pServer;<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">return</SPAN><SPAN style="COLOR: #000000">&nbsp;bRet;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pFile</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">SendRequest();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pFile</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">QueryInfoStatusCode(dwRet);<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #008000">//</SPAN><SPAN style="COLOR: #008000">&nbsp;were&nbsp;we&nbsp;redirected?</SPAN><SPAN style="COLOR: #008000"><BR></SPAN><SPAN style="COLOR: #000000">&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #008000">//</SPAN><SPAN style="COLOR: #008000">&nbsp;these&nbsp;response&nbsp;status&nbsp;codes&nbsp;come&nbsp;from&nbsp;WININET.H</SPAN><SPAN style="COLOR: #008000"><BR></SPAN><SPAN style="COLOR: #000000">&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(dwRet&nbsp;</SPAN><SPAN style="COLOR: #000000">==</SPAN><SPAN style="COLOR: #000000">&nbsp;HTTP_STATUS_MOVED&nbsp;</SPAN><SPAN style="COLOR: #000000">||</SPAN><SPAN style="COLOR: #000000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dwRet&nbsp;</SPAN><SPAN style="COLOR: #000000">==</SPAN><SPAN style="COLOR: #000000">&nbsp;HTTP_STATUS_REDIRECT&nbsp;</SPAN><SPAN style="COLOR: #000000">||</SPAN><SPAN style="COLOR: #000000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dwRet&nbsp;</SPAN><SPAN style="COLOR: #000000">==</SPAN><SPAN style="COLOR: #000000">&nbsp;HTTP_STATUS_REDIRECT_METHOD)<BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CString&nbsp;strNewLocation;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pFile</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">QueryInfo(HTTP_QUERY_RAW_HEADERS_CRLF,&nbsp;strNewLocation);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">int</SPAN><SPAN style="COLOR: #000000">&nbsp;nPlace&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;strNewLocation.Find(_T(</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">Location:&nbsp;</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">));<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(nPlace&nbsp;</SPAN><SPAN style="COLOR: #000000">==</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">-</SPAN><SPAN style="COLOR: #000000">1</SPAN><SPAN style="COLOR: #000000">)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TRACE(&nbsp;_T(</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">Error:&nbsp;Site&nbsp;redirects&nbsp;with&nbsp;no&nbsp;new&nbsp;location\n</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">)&nbsp;);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #008000">//</SPAN><SPAN style="COLOR: #008000">&nbsp;close&nbsp;up&nbsp;the&nbsp;redirected&nbsp;site</SPAN><SPAN style="COLOR: #008000"><BR></SPAN><SPAN style="COLOR: #000000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pFile</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">Close();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">delete</SPAN><SPAN style="COLOR: #000000">&nbsp;pFile;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pServer</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">Close();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">delete</SPAN><SPAN style="COLOR: #000000">&nbsp;pServer;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">return</SPAN><SPAN style="COLOR: #000000">&nbsp;bRet;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strNewLocation&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;strNewLocation.Mid(nPlace&nbsp;</SPAN><SPAN style="COLOR: #000000">+</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">10</SPAN><SPAN style="COLOR: #000000">);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nPlace&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;strNewLocation.Find('\n');<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(nPlace&nbsp;</SPAN><SPAN style="COLOR: #000000">&gt;</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strNewLocation&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;strNewLocation.Left(nPlace);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strOldLocation&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;strNewLocation;<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(&nbsp;dwRet&nbsp;</SPAN><SPAN style="COLOR: #000000">==</SPAN><SPAN style="COLOR: #000000">&nbsp;HTTP_STATUS_OK&nbsp;)<BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bRet&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;TRUE;<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #008000">//</SPAN><SPAN style="COLOR: #008000">&nbsp;close&nbsp;up&nbsp;the&nbsp;redirected&nbsp;site</SPAN><SPAN style="COLOR: #008000"><BR></SPAN><SPAN style="COLOR: #000000">&nbsp;&nbsp;&nbsp;&nbsp;pFile</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">Close();<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">delete</SPAN><SPAN style="COLOR: #000000">&nbsp;pFile;<BR>&nbsp;&nbsp;&nbsp;&nbsp;pServer</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">Close();<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">delete</SPAN><SPAN style="COLOR: #000000">&nbsp;pServer;<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">return</SPAN><SPAN style="COLOR: #000000">&nbsp;bRet;<BR>}<BR><BR>BOOL&nbsp;CDownloadFile::GetFtpFile(CInternetSession&nbsp;</SPAN><SPAN style="COLOR: #000000">&amp;</SPAN><SPAN style="COLOR: #000000">cSession)<BR>{<BR>&nbsp;&nbsp;&nbsp;&nbsp;BOOL&nbsp;bRet&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;FALSE;<BR>&nbsp;&nbsp;&nbsp;&nbsp;CFile&nbsp;m_TmpFile;<BR>&nbsp;&nbsp;&nbsp;&nbsp;CFileException&nbsp;fileException;<BR>&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(&nbsp;</SPAN><SPAN style="COLOR: #000000">!</SPAN><SPAN style="COLOR: #000000">m_TmpFile.Open&nbsp;(m_strTmpFileName,&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CFile::modeCreate&nbsp;</SPAN><SPAN style="COLOR: #000000">|</SPAN><SPAN style="COLOR: #000000">&nbsp;CFile::modeNoTruncate&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #000000">|</SPAN><SPAN style="COLOR: #000000">&nbsp;CFile::modeReadWrite<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #000000">|</SPAN><SPAN style="COLOR: #000000">&nbsp;CFile::shareDenyWrite&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #000000">|</SPAN><SPAN style="COLOR: #000000">&nbsp;CFile::typeBinary,<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #000000">&amp;</SPAN><SPAN style="COLOR: #000000">fileException&nbsp;)&nbsp;)<BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TRACE(&nbsp;_T(</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">Open&nbsp;File&nbsp;failed:&nbsp;%d\n</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">),&nbsp;fileException.m_cause&nbsp;);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">return</SPAN><SPAN style="COLOR: #000000">&nbsp;bRet;<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;DWORD&nbsp;dwCount&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;CFtpConnection&nbsp;</SPAN><SPAN style="COLOR: #000000">*</SPAN><SPAN style="COLOR: #000000">pFtpConn&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;NULL;<BR>&nbsp;&nbsp;&nbsp;&nbsp;CInternetFile&nbsp;</SPAN><SPAN style="COLOR: #000000">*</SPAN><SPAN style="COLOR: #000000">pFile&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;NULL;<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">try</SPAN><SPAN style="COLOR: #000000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CString&nbsp;strServerName,strObject,strUserName,strPassword;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INTERNET_PORT&nbsp;nPort&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DWORD&nbsp;dwServiceType&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CString&nbsp;strRestPointCommand;<BR>&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(</SPAN><SPAN style="COLOR: #000000">!</SPAN><SPAN style="COLOR: #000000">AfxParseURLEx(m_strFileURL,&nbsp;dwServiceType,&nbsp;strServerName,&nbsp;strObject,&nbsp;nPort,&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strUserName,&nbsp;strPassword)&nbsp;</SPAN><SPAN style="COLOR: #000000">||</SPAN><SPAN style="COLOR: #000000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dwServiceType&nbsp;</SPAN><SPAN style="COLOR: #000000">!=</SPAN><SPAN style="COLOR: #000000">&nbsp;INTERNET_SERVICE_FTP)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TRACE(&nbsp;_T(</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">Not&nbsp;A&nbsp;Ftp&nbsp;Quest!\n</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">)&nbsp;);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #008000">//</SPAN><SPAN style="COLOR: #008000">&nbsp;CFtpConnection&nbsp;ERROR_INTERNET_NO_DIRECT_ACCESS&nbsp;CInternetSession</SPAN><SPAN style="COLOR: #008000"><BR></SPAN><SPAN style="COLOR: #000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(strUserName.IsEmpty())<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pFtpConn&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;cSession.GetFtpConnection(strServerName,NULL,NULL,nPort,m_bForceReload);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">else</SPAN><SPAN style="COLOR: #000000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pFtpConn&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;cSession.GetFtpConnection(strServerName,strUserName,strPassword,nPort,m_bForceReload);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(m_TmpFile.GetLength())<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PostNotifyMessage(MAKEWPARAM(NOTIFY_MSG_LOW_WPARAM_CURRENTSIZE,m_wFileID),m_TmpFile.GetLength());<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_TmpFile.SeekToEnd();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strRestPointCommand.Format(&nbsp;_T(</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">REST&nbsp;%d</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">),&nbsp;m_TmpFile.GetLength());<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #008000">//</SPAN><SPAN style="COLOR: #008000">strRestPointCommand.Format(&nbsp;_T("ls")&nbsp;);</SPAN><SPAN style="COLOR: #008000"><BR></SPAN><SPAN style="COLOR: #000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(&nbsp;</SPAN><SPAN style="COLOR: #000000">!</SPAN><SPAN style="COLOR: #000000">FtpCommand((</SPAN><SPAN style="COLOR: #000000">*</SPAN><SPAN style="COLOR: #000000">pFtpConn),&nbsp;FALSE,&nbsp;FTP_TRANSFER_TYPE_ASCII,&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strRestPointCommand,&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">,&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">)&nbsp;)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TRACE(&nbsp;_T(</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">FtpCommand&nbsp;failed,&nbsp;error:&nbsp;%d\n</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">),&nbsp;GetLastError());<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_TmpFile.SeekToBegin();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(pFtpConn)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pFile&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;pFtpConn</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">OpenFile(strObject);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">catch</SPAN><SPAN style="COLOR: #000000">&nbsp;(CInternetException</SPAN><SPAN style="COLOR: #000000">*</SPAN><SPAN style="COLOR: #000000">&nbsp;e)<BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TCHAR&nbsp;&nbsp;&nbsp;szCause[MAX_PATH]&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;{</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">};<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">GetErrorMessage(szCause,&nbsp;MAX_PATH);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">Delete();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">delete</SPAN><SPAN style="COLOR: #000000">&nbsp;pFile;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">delete</SPAN><SPAN style="COLOR: #000000">&nbsp;pFtpConn;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">return</SPAN><SPAN style="COLOR: #000000">&nbsp;bRet;<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;COleDateTime&nbsp;startTime&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;COleDateTime::GetCurrentTime();<BR>&nbsp;&nbsp;&nbsp;&nbsp;DWORD&nbsp;dwFtpFileSize&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(pFile)<BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BYTE&nbsp;buffer[BUFFER_SIZE</SPAN><SPAN style="COLOR: #000000">+</SPAN><SPAN style="COLOR: #000000">1</SPAN><SPAN style="COLOR: #000000">]&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;{</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">};<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">try</SPAN><SPAN style="COLOR: #000000">&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UINT&nbsp;nRead&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dwFtpFileSize&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;FtpGetFileSize(&nbsp;(</SPAN><SPAN style="COLOR: #000000">*</SPAN><SPAN style="COLOR: #000000">pFile),</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PostNotifyMessage(MAKEWPARAM(NOTIFY_MSG_LOW_WPARAM_FULLSIZE,m_wFileID),dwFtpFileSize);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TRACE(&nbsp;_T(</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">Totoal&nbsp;Length&nbsp;is&nbsp;%d\n</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">),&nbsp;dwFtpFileSize&nbsp;);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dwCount&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">do</SPAN><SPAN style="COLOR: #000000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nRead&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;pFile</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">Read(buffer,&nbsp;BUFFER_SIZE);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(nRead&nbsp;</SPAN><SPAN style="COLOR: #000000">&gt;</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;buffer[nRead]&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_TmpFile.Write(buffer,nRead);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;COleDateTimeSpan&nbsp;elapsed&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;COleDateTime::GetCurrentTime()&nbsp;</SPAN><SPAN style="COLOR: #000000">-</SPAN><SPAN style="COLOR: #000000">&nbsp;startTime;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">double</SPAN><SPAN style="COLOR: #000000">&nbsp;dSecs&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;elapsed.GetTotalSeconds();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PostNotifyMessage(MAKEWPARAM(NOTIFY_MSG_LOW_WPARAM_DOWNSIZE,m_wFileID),dwCount);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(dSecs&nbsp;</SPAN><SPAN style="COLOR: #000000">&gt;</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0.0</SPAN><SPAN style="COLOR: #000000">)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dwCount&nbsp;</SPAN><SPAN style="COLOR: #000000">+=</SPAN><SPAN style="COLOR: #000000">&nbsp;nRead;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_transferRate&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;(</SPAN><SPAN style="COLOR: #0000ff">float</SPAN><SPAN style="COLOR: #000000">)(dwCount&nbsp;</SPAN><SPAN style="COLOR: #000000">/</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">1024.0</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">/</SPAN><SPAN style="COLOR: #000000">&nbsp;dSecs);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TRACE(</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">Read&nbsp;%d&nbsp;bytes&nbsp;(%0.1f&nbsp;Kb/s)\n</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">,&nbsp;dwCount,&nbsp;m_transferRate&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">else</SPAN><SPAN style="COLOR: #000000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TRACE(</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">Read&nbsp;%d&nbsp;bytes\n</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">,&nbsp;dwCount);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_transferRate&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;(</SPAN><SPAN style="COLOR: #0000ff">float</SPAN><SPAN style="COLOR: #000000">)(dwCount&nbsp;</SPAN><SPAN style="COLOR: #000000">/</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">1024.0</SPAN><SPAN style="COLOR: #000000">);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PostNotifyMessage(MAKEWPARAM(NOTIFY_MSG_LOW_WPARAM_DOWNSPEED,m_wFileID),(LPARAM)m_transferRate);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">while</SPAN><SPAN style="COLOR: #000000">&nbsp;(nRead&nbsp;</SPAN><SPAN style="COLOR: #000000">&gt;</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bRet&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;TRUE;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">catch</SPAN><SPAN style="COLOR: #000000">&nbsp;(CFileException&nbsp;</SPAN><SPAN style="COLOR: #000000">*</SPAN><SPAN style="COLOR: #000000">e)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TCHAR&nbsp;&nbsp;&nbsp;szCause[MAX_PATH]&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;{</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">};<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">GetErrorMessage(szCause,&nbsp;MAX_PATH);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TRACE(</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">ErrorMsg&nbsp;:&nbsp;%s\n</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">,&nbsp;szCause);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">Delete();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">delete</SPAN><SPAN style="COLOR: #000000">&nbsp;pFile;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pFtpConn</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">Close();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">delete</SPAN><SPAN style="COLOR: #000000">&nbsp;pFtpConn;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_TmpFile.Close();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">return</SPAN><SPAN style="COLOR: #000000">&nbsp;FALSE;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pFile</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">Close();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">delete</SPAN><SPAN style="COLOR: #000000">&nbsp;pFile;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_TmpFile.Close();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pFtpConn</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">Close();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">delete</SPAN><SPAN style="COLOR: #000000">&nbsp;pFtpConn;<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">return</SPAN><SPAN style="COLOR: #000000">&nbsp;bRet;<BR>}<BR><BR>BOOL&nbsp;CDownloadFile::GetUNCFile()<BR>{<BR>&nbsp;&nbsp;&nbsp;&nbsp;BOOL&nbsp;bRet&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;FALSE;<BR>&nbsp;&nbsp;&nbsp;&nbsp;CFile&nbsp;m_TmpFile,m_SrcFile;<BR>&nbsp;&nbsp;&nbsp;&nbsp;CFileException&nbsp;fileException;<BR>&nbsp;&nbsp;&nbsp;&nbsp;CString&nbsp;strOldLocation&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;m_strFileURL;<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(&nbsp;</SPAN><SPAN style="COLOR: #000000">!</SPAN><SPAN style="COLOR: #000000">m_TmpFile.Open&nbsp;(m_strTmpFileName,&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CFile::modeCreate&nbsp;</SPAN><SPAN style="COLOR: #000000">|</SPAN><SPAN style="COLOR: #000000">&nbsp;CFile::modeNoTruncate&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #000000">|</SPAN><SPAN style="COLOR: #000000">&nbsp;CFile::modeReadWrite<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #000000">|</SPAN><SPAN style="COLOR: #000000">&nbsp;CFile::shareDenyWrite&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #000000">|</SPAN><SPAN style="COLOR: #000000">&nbsp;CFile::typeBinary,<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #000000">&amp;</SPAN><SPAN style="COLOR: #000000">fileException&nbsp;)&nbsp;)<BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TRACE(&nbsp;_T(</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">Open&nbsp;File&nbsp;failed:&nbsp;%d\n</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">),&nbsp;fileException.m_cause&nbsp;);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">return</SPAN><SPAN style="COLOR: #000000">&nbsp;bRet;<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;strOldLocation.TrimLeft();<BR>&nbsp;&nbsp;&nbsp;&nbsp;strOldLocation.TrimRight();<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">(&nbsp;StrCmpNI(strOldLocation,&nbsp;_T(</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">file:/</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">),</SPAN><SPAN style="COLOR: #000000">6</SPAN><SPAN style="COLOR: #000000">)&nbsp;</SPAN><SPAN style="COLOR: #000000">==</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">&nbsp;)<BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strOldLocation&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;strOldLocation.Mid(</SPAN><SPAN style="COLOR: #000000">8</SPAN><SPAN style="COLOR: #000000">);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strOldLocation.Replace(&nbsp;_T('</SPAN><SPAN style="COLOR: #000000">/</SPAN><SPAN style="COLOR: #000000">'),&nbsp;_T('\\'));<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(&nbsp;</SPAN><SPAN style="COLOR: #000000">!</SPAN><SPAN style="COLOR: #000000">m_SrcFile.Open&nbsp;(&nbsp;strOldLocation,&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CFile::modeRead&nbsp;</SPAN><SPAN style="COLOR: #000000">|</SPAN><SPAN style="COLOR: #000000">&nbsp;CFile::shareDenyWrite&nbsp;</SPAN><SPAN style="COLOR: #000000">|</SPAN><SPAN style="COLOR: #000000">&nbsp;CFile::typeBinary,<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #000000">&amp;</SPAN><SPAN style="COLOR: #000000">fileException&nbsp;)&nbsp;)<BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TRACE(&nbsp;_T(</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">Open&nbsp;File&nbsp;failed:&nbsp;%d\n</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">),&nbsp;fileException.m_cause&nbsp;);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">return</SPAN><SPAN style="COLOR: #000000">&nbsp;bRet;<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;COleDateTime&nbsp;startTime&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;COleDateTime::GetCurrentTime();<BR>&nbsp;&nbsp;&nbsp;&nbsp;DWORD&nbsp;dwCount&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">try</SPAN><SPAN style="COLOR: #000000">&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(m_TmpFile.GetLength())<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PostNotifyMessage(MAKEWPARAM(NOTIFY_MSG_LOW_WPARAM_CURRENTSIZE,m_wFileID),m_TmpFile.GetLength());<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_TmpFile.SeekToEnd();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_SrcFile.Seek(m_TmpFile.GetLength(),&nbsp;CFile::begin);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BYTE&nbsp;buffer[BUFFER_SIZE</SPAN><SPAN style="COLOR: #000000">+</SPAN><SPAN style="COLOR: #000000">1</SPAN><SPAN style="COLOR: #000000">]&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;{</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">};<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UINT&nbsp;nRead&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PostNotifyMessage(MAKEWPARAM(NOTIFY_MSG_LOW_WPARAM_FULLSIZE,m_wFileID),m_SrcFile.GetLength());<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TRACE(&nbsp;_T(</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">Totoal&nbsp;Length&nbsp;is&nbsp;%d,left&nbsp;is&nbsp;%d\n</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">),&nbsp;m_SrcFile.GetLength()&nbsp;,m_SrcFile.GetLength()&nbsp;</SPAN><SPAN style="COLOR: #000000">-</SPAN><SPAN style="COLOR: #000000">&nbsp;m_TmpFile.GetLength());<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dwCount&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">do</SPAN><SPAN style="COLOR: #000000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nRead&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;m_SrcFile.Read(buffer,&nbsp;BUFFER_SIZE);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(nRead&nbsp;</SPAN><SPAN style="COLOR: #000000">&gt;</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;buffer[nRead]&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_TmpFile.Write(buffer,nRead);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;COleDateTimeSpan&nbsp;elapsed&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;COleDateTime::GetCurrentTime()&nbsp;</SPAN><SPAN style="COLOR: #000000">-</SPAN><SPAN style="COLOR: #000000">&nbsp;startTime;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">double</SPAN><SPAN style="COLOR: #000000">&nbsp;dSecs&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;elapsed.GetTotalSeconds();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PostNotifyMessage(MAKEWPARAM(NOTIFY_MSG_LOW_WPARAM_DOWNSIZE,m_wFileID),dwCount);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(dSecs&nbsp;</SPAN><SPAN style="COLOR: #000000">&gt;</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0.0</SPAN><SPAN style="COLOR: #000000">)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dwCount&nbsp;</SPAN><SPAN style="COLOR: #000000">+=</SPAN><SPAN style="COLOR: #000000">&nbsp;nRead;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_transferRate&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;(</SPAN><SPAN style="COLOR: #0000ff">float</SPAN><SPAN style="COLOR: #000000">)(dwCount&nbsp;</SPAN><SPAN style="COLOR: #000000">/</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">1024.0</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">/</SPAN><SPAN style="COLOR: #000000">&nbsp;dSecs);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TRACE(</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">Read&nbsp;%d&nbsp;bytes&nbsp;(%0.1f&nbsp;Kb/s)\n</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">,&nbsp;dwCount,&nbsp;m_transferRate&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">else</SPAN><SPAN style="COLOR: #000000"><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TRACE(</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">Read&nbsp;%d&nbsp;bytes\n</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">,&nbsp;dwCount);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_transferRate&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;(</SPAN><SPAN style="COLOR: #0000ff">float</SPAN><SPAN style="COLOR: #000000">)(dwCount&nbsp;</SPAN><SPAN style="COLOR: #000000">/</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">1024.0</SPAN><SPAN style="COLOR: #000000">);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PostNotifyMessage(MAKEWPARAM(NOTIFY_MSG_LOW_WPARAM_DOWNSPEED,m_wFileID),(LPARAM)m_transferRate);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">while</SPAN><SPAN style="COLOR: #000000">&nbsp;(nRead&nbsp;</SPAN><SPAN style="COLOR: #000000">&gt;</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bRet&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;TRUE;<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">catch</SPAN><SPAN style="COLOR: #000000">&nbsp;(CFileException&nbsp;</SPAN><SPAN style="COLOR: #000000">*</SPAN><SPAN style="COLOR: #000000">e)<BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TCHAR&nbsp;&nbsp;&nbsp;szCause[MAX_PATH]&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;{</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">};<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">GetErrorMessage(szCause,&nbsp;MAX_PATH);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TRACE(</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">ErrorMsg&nbsp;:&nbsp;%s\n</SPAN><SPAN style="COLOR: #000000">"</SPAN><SPAN style="COLOR: #000000">,&nbsp;szCause);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e</SPAN><SPAN style="COLOR: #000000">-&gt;</SPAN><SPAN style="COLOR: #000000">Delete();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_TmpFile.Close();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">return</SPAN><SPAN style="COLOR: #000000">&nbsp;FALSE;<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;m_TmpFile.Close();<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">return</SPAN><SPAN style="COLOR: #000000">&nbsp;bRet;<BR>}<BR><BR></SPAN><SPAN style="COLOR: #0000ff">void</SPAN><SPAN style="COLOR: #000000">&nbsp;CDownloadFile::RegisterNotifyWindow(DWORD&nbsp;dwThreadID,HWND&nbsp;hWnd,&nbsp;DWORD&nbsp;dwMsg)<BR>{<BR>&nbsp;&nbsp;&nbsp;&nbsp;m_dwThreadID&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;dwThreadID;<BR>&nbsp;&nbsp;&nbsp;&nbsp;m_hNotify&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;hWnd;<BR>&nbsp;&nbsp;&nbsp;&nbsp;m_dwMsgID&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;dwMsg;<BR>}<BR><BR></SPAN><SPAN style="COLOR: #0000ff">void</SPAN><SPAN style="COLOR: #000000">&nbsp;CDownloadFile::PostNotifyMessage(WPARAM&nbsp;wParam,&nbsp;LPARAM&nbsp;lParam)<BR>{<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(m_hNotify)<BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::PostMessage(m_hNotify,&nbsp;m_dwMsgID,&nbsp;wParam,&nbsp;&nbsp;lParam);<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(&nbsp;m_dwThreadID&nbsp;)<BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::PostThreadMessage(m_dwThreadID,m_dwMsgID,&nbsp;wParam,&nbsp;lParam);<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>}<BR><BR>WORD&nbsp;CDownloadFile::GenFileID()<BR>{<BR>&nbsp;&nbsp;&nbsp;&nbsp;srand(GetTickCount());<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">return</SPAN><SPAN style="COLOR: #000000">&nbsp;rand()&nbsp;</SPAN><SPAN style="COLOR: #000000">&amp;</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0xFFFF</SPAN><SPAN style="COLOR: #000000">;<BR>}<BR></SPAN></DIV></PRE>
+<DIV style="BORDER-RIGHT: #cccccc 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #cccccc 1px solid; PADDING-LEFT: 4px; FONT-SIZE: 13px; PADDING-BOTTOM: 4px; BORDER-LEFT: #cccccc 1px solid; WIDTH: 98%; WORD-BREAK: break-all; PADDING-TOP: 4px; BORDER-BOTTOM: #cccccc 1px solid; BACKGROUND-COLOR: #eeeeee"><SPAN style="COLOR: #000000">UINT&nbsp;ThreadDownSingleFile(&nbsp;LPVOID&nbsp;pParam&nbsp;)<BR>{<BR>&nbsp;&nbsp;&nbsp;&nbsp;CDownloadFile&nbsp;m_DownFile;<BR>&nbsp;&nbsp;&nbsp;&nbsp;UINT&nbsp;uRet&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">0</SPAN><SPAN style="COLOR: #000000">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(lpDownParam)<BR>&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_DownFile.m_wFileID&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;m_DownFile.GenFileID();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #008000">//</SPAN><SPAN style="COLOR: #008000">这里注册通知窗口和消息</SPAN><SPAN style="COLOR: #008000"><BR></SPAN><SPAN style="COLOR: #000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #008000">//</SPAN><SPAN style="COLOR: #008000">m_DownFile.RegisterNotifyWindow</SPAN><SPAN style="COLOR: #008000"><BR></SPAN><SPAN style="COLOR: #000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000">&nbsp;(&nbsp;m_DownFile.DownLoadFile(m_Msg.lpFileSrc,&nbsp;m_Msg.lpFileDst)&nbsp;)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uRet&nbsp;</SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000">&nbsp;</SPAN><SPAN style="COLOR: #000000">1</SPAN><SPAN style="COLOR: #000000">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="COLOR: #0000ff">return</SPAN><SPAN style="COLOR: #000000">&nbsp;uRet;<BR>}</SPAN></DIV>
+	<div class = "itemdesc">
+		posted on 2005-12-31 14:22 <a href='http://www.cnitblog.com/wangk/'>孤独的夜</a> 阅读(4407) <a href='#Post'>评论(10)</a> &nbsp;<a href="http://www.cnitblog.com/wangk/admin/EditPosts.aspx?postid=5942">编辑</a>&nbsp;<a href="http://www.cnitblog.com/wangk/AddToFavorite.aspx?id=5942">收藏</a> <a href='http://www.cnitblog.com/wangk/services/trackbacks/5942.aspx'>引用</a>  所属分类: <a href='http://www.cnitblog.com/wangk/category/1507.html'>VC Skill</a> 
+	</div>
+</div>
+	<img src ="http://www.cnitblog.com/wangk/aggbug/5942.html?webview=1" width = "1" height = "1" />
+	
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+rdf:about="http://www.cnitblog.com/wangk/archive/2005/12/31/5942.html"
+dc:identifier="http://www.cnitblog.com/wangk/archive/2005/12/31/5942.html"
+dc:title="HTTP服务器上断点下载文件"
+trackback:ping="http://www.cnitblog.com/wangk/services/trackbacks/5942.aspx" />
+</rdf:RDF>
+-->
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('AjaxHolder$scriptmanager1', document.getElementById('Form1'));
+Sys.WebForms.PageRequestManager.getInstance()._updateControls(['tAjaxHolder$UpdatePanel1'], [], [], 90);
+//]]>
+</script>
+
+<div id="AjaxHolder_UpdatePanel1">
+	    
+    <a name="pagedcomment"></a>
+<a name = "评论" />
+<div class = "moreinfo">
+	<div class = "moreinfotitle">
+		Comments
+	</div>
+		
+	
+			<ul class = "morelist">
+		
+			<li class = "morelistitem">
+				<div class = "moreinfotitle">
+					<a title="permalink: re: HTTP服务器上断点下载文件" href="/wangk/archive/2007/05/22/5942.html#6489">#</a>&nbsp;<a name="6489"></a>re: HTTP服务器上断点下载文件
+				</div>
+				<a id="AjaxHolder_Comments_CommentList_ctl01_NameLink" target="_blank">ALAN</a><br />
+				Posted @ 2006-02-07 16:02<br />
+				非常不错<br>有没有 上传的 代码阿？？？？<br>这个比较重要！<br>感谢！&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;ALAN&quot;)" href="/wangk/archive/2007/05/22/5942.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cnitblog.com/comment?author=ALAN" target="_blank">更多评论</a>
+				<a id="AjaxHolder_Comments_CommentList_ctl01_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl01$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl01_EditLink"></a>
+			</li>
+		
+			<li class = "morelistitem">
+				<div class = "moreinfotitle">
+					<a title="permalink: re: HTTP服务器上断点下载文件" href="/wangk/archive/2007/05/22/5942.html#7397">#</a>&nbsp;<a name="7397"></a>re: HTTP服务器上断点下载文件
+				</div>
+				<a id="AjaxHolder_Comments_CommentList_ctl02_NameLink" href="http://%ef%bc%8d" target="_blank">noname</a><br />
+				Posted @ 2006-03-09 10:55<br />
+				session.SetOption(INTERNET_OPTION_DATA_RECEIVE_TIMEOUT, m_TimeOut);<br><br>MSDN上说INTERNET_OPTION_DATA_RECEIVE_TIMEOUT是没有实现的参数&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;noname&quot;)" href="/wangk/archive/2007/05/22/5942.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cnitblog.com/comment?author=noname" target="_blank">更多评论</a>
+				<a id="AjaxHolder_Comments_CommentList_ctl02_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl02$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl02_EditLink"></a>
+			</li>
+		
+			<li class = "morelistitem">
+				<div class = "moreinfotitle">
+					<a title="permalink: re: HTTP服务器上断点下载文件" href="/wangk/archive/2007/05/22/5942.html#7700">#</a>&nbsp;<a name="7700"></a>re: HTTP服务器上断点下载文件
+				</div>
+				<a id="AjaxHolder_Comments_CommentList_ctl03_NameLink" href="http://www.cnitblog.com/wangk/" target="_blank">孤独的夜</a><br />
+				Posted @ 2006-03-17 09:18<br />
+				你要用最新的SDK里面有。&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;孤独的夜&quot;)" href="/wangk/archive/2007/05/22/5942.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cnitblog.com/comment?author=%e5%ad%a4%e7%8b%ac%e7%9a%84%e5%a4%9c" target="_blank">更多评论</a>
+				<a id="AjaxHolder_Comments_CommentList_ctl03_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl03$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl03_EditLink"></a>
+			</li>
+		
+			<li class = "morelistitem">
+				<div class = "moreinfotitle">
+					<a title="permalink: re: HTTP服务器上断点下载文件" href="/wangk/archive/2007/05/22/5942.html#7910">#</a>&nbsp;<a name="7910"></a>re: HTTP服务器上断点下载文件
+				</div>
+				<a id="AjaxHolder_Comments_CommentList_ctl04_NameLink" target="_blank">QQ  308806913</a><br />
+				Posted @ 2006-03-21 17:04<br />
+				本人菜鸟 没能看出 断点是怎样 续传的 清高手指点一二，万分感激。。。<br>QQ 308806913, C++  群 2306581。。。 欢迎大家一起交流讨论 谢谢&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;QQ  308806913&quot;)" href="/wangk/archive/2007/05/22/5942.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cnitblog.com/comment?author=QQ++308806913" target="_blank">更多评论</a>
+				<a id="AjaxHolder_Comments_CommentList_ctl04_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl04$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl04_EditLink"></a>
+			</li>
+		
+			<li class = "morelistitem">
+				<div class = "moreinfotitle">
+					<a title="permalink: re: HTTP服务器上断点下载文件" href="/wangk/archive/2007/05/22/5942.html#7912">#</a>&nbsp;<a name="7912"></a>re: HTTP服务器上断点下载文件
+				</div>
+				<a id="AjaxHolder_Comments_CommentList_ctl05_NameLink" target="_blank">QQ  308806913</a><br />
+				Posted @ 2006-03-21 17:10<br />
+				我查了很多资料， 要实现断点续传，一般都用到 CinternetFile::Seek 函数，但是我在使用的时候，弹匡，异常郁闷。。。。。！！！！！&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;QQ  308806913&quot;)" href="/wangk/archive/2007/05/22/5942.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cnitblog.com/comment?author=QQ++308806913" target="_blank">更多评论</a>
+				<a id="AjaxHolder_Comments_CommentList_ctl05_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl05$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl05_EditLink"></a>
+			</li>
+		
+			<li class = "morelistitem">
+				<div class = "moreinfotitle">
+					<a title="permalink: re: HTTP服务器上断点下载文件" href="/wangk/archive/2007/05/22/5942.html#7914">#</a>&nbsp;<a name="7914"></a>re: HTTP服务器上断点下载文件
+				</div>
+				<a id="AjaxHolder_Comments_CommentList_ctl06_NameLink" target="_blank">QQ  308806913</a><br />
+				Posted @ 2006-03-21 17:22<br />
+				REST &quot;+filesize+&quot;\r\n&quot;;使服务器搜索服务器端的文件流到指定的断点<br>看到了 ，，，，谢谢  斑竹&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;QQ  308806913&quot;)" href="/wangk/archive/2007/05/22/5942.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cnitblog.com/comment?author=QQ++308806913" target="_blank">更多评论</a>
+				<a id="AjaxHolder_Comments_CommentList_ctl06_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl06$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl06_EditLink"></a>
+			</li>
+		
+			<li class = "morelistitem">
+				<div class = "moreinfotitle">
+					<a title="permalink: re: HTTP服务器上断点下载文件" href="/wangk/archive/2007/05/22/5942.html#27433">#</a>&nbsp;<a name="27433"></a>re: HTTP服务器上断点下载文件
+				</div>
+				<a id="AjaxHolder_Comments_CommentList_ctl07_NameLink" target="_blank">devel</a><br />
+				Posted @ 2007-05-22 09:08<br />
+				多谢！！！！！&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;devel&quot;)" href="/wangk/archive/2007/05/22/5942.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cnitblog.com/comment?author=devel" target="_blank">更多评论</a>
+				<a id="AjaxHolder_Comments_CommentList_ctl07_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl07$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl07_EditLink"></a>
+			</li>
+		
+			<li class = "morelistitem">
+				<div class = "moreinfotitle">
+					<a title="permalink: re: HTTP服务器上断点下载文件" href="/wangk/archive/2007/05/22/5942.html#34977">#</a>&nbsp;<a name="34977"></a>re: HTTP服务器上断点下载文件
+				</div>
+				<a id="AjaxHolder_Comments_CommentList_ctl08_NameLink" target="_blank">didi</a><br />
+				Posted @ 2007-10-17 09:58<br />
+				太好了！！&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;didi&quot;)" href="/wangk/archive/2007/05/22/5942.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cnitblog.com/comment?author=didi" target="_blank">更多评论</a>
+				<a id="AjaxHolder_Comments_CommentList_ctl08_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl08$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl08_EditLink"></a>
+			</li>
+		
+			<li class = "morelistitem">
+				<div class = "moreinfotitle">
+					<a title="permalink: re: HTTP服务器上断点下载文件" href="/wangk/archive/2007/05/22/5942.html#35198">#</a>&nbsp;<a name="35198"></a>re: HTTP服务器上断点下载文件
+				</div>
+				<a id="AjaxHolder_Comments_CommentList_ctl09_NameLink" target="_blank">阿才</a><br />
+				Posted @ 2007-10-22 19:07<br />
+				文章很好！顶！&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;阿才&quot;)" href="/wangk/archive/2007/05/22/5942.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cnitblog.com/comment?author=%e9%98%bf%e6%89%8d" target="_blank">更多评论</a>
+				<a id="AjaxHolder_Comments_CommentList_ctl09_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl09$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl09_EditLink"></a>
+			</li>
+		
+			<li class = "morelistitem">
+				<div class = "moreinfotitle">
+					<a title="permalink: re: HTTP服务器上断点下载文件" href="/wangk/archive/2007/05/22/5942.html#51676">#</a>&nbsp;<a name="51676"></a>re: HTTP服务器上断点下载文件<a name="Post"></a>
+				</div>
+				<a id="AjaxHolder_Comments_CommentList_ctl10_NameLink" href="http://www.cppblog.com/tangxinfa" target="_blank">tangxinfa</a><br />
+				Posted @ 2008-11-19 13:33<br />
+				在下载前应该再加上连接后的错误检测代码，以免当要下载的文件不存在时，下载文件的内容为错误信息：<br>		DWORD dwStatusCode;<br>		if(pFile-&gt;QueryInfo(HTTP_QUERY_STATUS_CODE | HTTP_QUERY_FLAG_NUMBER, dwStatusCode) &amp;&amp;<br>			dwStatusCode != HTTP_STATUS_OK)<br>		{<br>			TRACE(&quot;Download error, status code: %d\n&quot;, dwStatusCode);<br>			return FALSE;<br>		}&nbsp;&nbsp;<a onclick="return SetReplyAuhor(&quot;tangxinfa&quot;)" href="/wangk/archive/2007/05/22/5942.html#post">回复</a>&nbsp;&nbsp;<a title="查看该作者发表过的评论" href="http://www.cnitblog.com/comment?author=tangxinfa" target="_blank">更多评论</a>
+				<a id="AjaxHolder_Comments_CommentList_ctl10_DeleteLink" href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl10$DeleteLink','')"></a>&nbsp;&nbsp;<a id="AjaxHolder_Comments_CommentList_ctl10_EditLink"></a>
+			</li>
+		
+			</ul>
+		
+</div>
+
+
+<div id="AjaxHolder_Comments_divRefreshComments" style="text-align:right;margin-right:10px;margin-bottom:5px;font-size:12px;"><a id="AjaxHolder_Comments_refreshList" href="javascript:__doPostBack('AjaxHolder$Comments$refreshList','')">刷新评论列表</a></div>
+<style>
+td { font-size: 12px }
+.commentTextBox 
+{ 
+    font-family : Verdana; 
+    font-size: 13px;
+ }
+</style>
+<!--Beging Temp Save-->
+<STYLE>.userData { BEHAVIOR: url(#default#userdata) }
+	</STYLE>
+<DIV class="userData" id="CommentsPersistDiv"></DIV>
+
+<script type="text/javascript">
+function pageLoad()
+{
+    Sys.WebForms.PageRequestManager.getInstance().add_initializeRequest(handleInitializeRequest);
+    //Sys.WebForms.PageRequestManager.getInstance().add_endRequest(handleEndRequest);
+}
+
+function handleInitializeRequest(sender, args)
+{
+    var prm = Sys.WebForms.PageRequestManager.getInstance();
+    var eid = args.get_postBackElement().id;
+    if (eid.indexOf("DeleteLink")>0) 
+    {
+       args.get_postBackElement().innerHTML = "<font color='red'>正在删除...</font>";         
+    }    
+    if (eid.indexOf("btnSubmit")>0) 
+    {
+       document.getElementById("AjaxHolder_PostComment_ltSubmitMsg").innerHTML="正在提交...";
+       document.getElementById("AjaxHolder_PostComment_btnSubmit").disabled = true;
+       
+    }    
+   
+}	
+
+function TempSave(ElementID)
+{
+	try
+	{
+	CommentsPersistDiv.setAttribute("CommentContent",document.getElementById(ElementID).value);
+	CommentsPersistDiv.save("CommentXMLStore");
+	}
+	catch(ex)
+	{
+	}
+	
+}
+function Restore(ElementID)
+{
+	CommentsPersistDiv.load("CommentXMLStore");
+	document.getElementById(ElementID).value=CommentsPersistDiv.getAttribute("CommentContent");
+}	
+			
+			
+</script>
+<!--Ene TempSave-->
+
+<div id="AjaxHolder_PostComment_divCommnentArea">
+<div class="commentform">
+
+<br/>
+<span id="AjaxHolder_PostComment_ltSubmitMsg" style="color:Red;"></span>
+<br />
+<a name="Feedback"></a>
+	<TABLE cellSpacing="1" cellPadding="1" border="0">
+		<TR>
+			<TD width="75"></TD>
+			<TD></TD>
+			<TD></TD>
+		</TR>
+		<TR>
+			<TD width="55">标题</TD>
+			<TD><input name="AjaxHolder$PostComment$tbTitle" type="text" value="re: HTTP服务器上断点下载文件" id="AjaxHolder_PostComment_tbTitle" class="commenttb" style="width:320" /></TD>
+			<TD><span id="AjaxHolder_PostComment_RequiredFieldValidator1" style="color:Red;visibility:hidden;">请输入标题</span></TD>
+		</TR>
+		<TR>
+			<TD>姓名</TD>
+			<TD><input name="AjaxHolder$PostComment$tbName" type="text" id="AjaxHolder_PostComment_tbName" class="commenttb" style="width:320" /></TD>
+			<TD><span id="AjaxHolder_PostComment_RequiredFieldValidator2" style="color:Red;visibility:hidden;">请输入你的姓名</span></TD>
+		</TR>
+		<TR>
+			<TD>主页</TD>
+			<TD><input name="AjaxHolder$PostComment$tbUrl" type="text" id="AjaxHolder_PostComment_tbUrl" class="commenttb" style="width:320" /></TD>
+			<TD><FONT face="宋体"></FONT></TD>
+		</TR>
+		<tr>
+			<td align="left" colSpan="3">
+				<table id="AjaxHolder_PostComment_tbCaptchaImage" class="CommentForm" cellspacing="0" cellpadding="0" border="0">
+		<tr>
+			<td colspan="3">
+							<span id="AjaxHolder_PostComment_Requiredfieldvalidator4" style="color:Red;display:none;">请输入验证码</span>
+							<span id="AjaxHolder_PostComment_lblImage" style="color:Red;font-weight:bold;"></span>
+						</td>
+		</tr>
+		<tr>
+			<td width="78">验证码</td>
+			<td><input name="AjaxHolder$PostComment$CodeNumberTextBox" type="text" id="AjaxHolder_PostComment_CodeNumberTextBox" />*</td>
+			<td align="left">
+							<img src="../../../../../Modules/CaptchaImage/JpegImage.aspx" id="AjaxHolder_PostComment_Img1" />
+						</td>
+		</tr>
+	</table>
+	
+			</td>
+		</tr>
+		<TR>
+			<TD colSpan="3">内容(提交失败后,可以通过“恢复上次提交”恢复刚刚提交的内容)
+			<div style="width:610px;">
+			<div style="float:left;width:410px;">
+				<span id="AjaxHolder_PostComment_RequiredFieldValidator3" style="color:Red;visibility:hidden;">请输入评论内容</span><BR>
+				<textarea name="AjaxHolder$PostComment$tbComment" rows="10" cols="50" id="AjaxHolder_PostComment_tbComment" class="commentTextBox" onkeydown="ctlent(event,'AjaxHolder_PostComment_tbComment')" style="Width:400;Height:220"></textarea>
+			</div>
+			<div  style="float:right;width:200px;margin-top:25px;">
+			</div>
+			</div>
+			</TD>
+		</TR>
+		<TR>
+			<TD colSpan="3">
+		<span id="AjaxHolder_PostComment_Message" style="color:Red;"></span>
+		</td>
+		<TR>
+			<TD colSpan="3"><input id="AjaxHolder_PostComment_chkRemember" type="checkbox" name="AjaxHolder$PostComment$chkRemember" checked="checked" tabindex="-1" /><label for="AjaxHolder_PostComment_chkRemember">Remember Me?</label></TD>
+		</TR>
+		<TR>
+			<TD height="23"><input type="submit" name="AjaxHolder$PostComment$btnSubmit" value="提交" onclick="TempSave('AjaxHolder_PostComment_tbComment');WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;AjaxHolder$PostComment$btnSubmit&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="AjaxHolder_PostComment_btnSubmit" />
+				</TD>
+			<td colSpan="2" height="23">&nbsp;
+				<a id="AjaxHolder_PostComment_lnkLogin" href="http://www.cnitblog.com/login.aspx?ReturnURL=http://www.cnitblog.com/wangk/archive/2007/05/22/5942.html&amp;SourceURL=/wangk/archive/2007/05/22/5942.html">登录</a>&nbsp;&nbsp;<a id="AjaxHolder_PostComment_linkLoginComment" OnClick="if(document.getElementById('AjaxHolder_PostComment_tbComment').value != '') return confirm('未提交的评论内容将会丢失, 你真的要进入高级评论吗?');" href="http://www.cnitblog.com/wangk/archive/2007/05/22/5942.html?login=1#Post">使用高级评论</a>&nbsp;&nbsp;<a href="http://www.cnitblog.com/RequireRegister.aspx">新用户注册</a>&nbsp;&nbsp;<A href="#Top">返回页首</A>&nbsp;&nbsp;<a id="AjaxHolder_PostComment_lbRestore" OnClick="Restore('AjaxHolder_PostComment_tbComment'); return false;" href="/wangk/archive/2007/05/22/5942.html#Post">恢复上次提交</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</td>
+		</TR>
+		<TR>
+			<TD colSpan="3">[使用Ctrl+Enter键可以直接提交]</TD>
+		</TR>
+		<tr>
+			
+			<td colspan="3" height="5">
+			<br/>
+			<script type="text/javascript" src="http://partner.googleadservices.com/gampad/google_service.js">
+			</script>
+			<script type="text/javascript">
+			  GS_googleAddAdSenseService("ca-pub-4210569241504288");
+			  GS_googleEnableAllServices();
+			</script>
+			<script type="text/javascript">
+			  GA_googleAddSlot("ca-pub-4210569241504288", "cnitblog_blogpost_bottom");
+			</script>
+			<script type="text/javascript">
+			  GA_googleFetchAds();
+			</script>
+			<script type="text/javascript">
+			  GA_googleFillSlot("cnitblog_blogpost_bottom");
+			</script>
+			</td>
+		</tr>
+		<TR>
+			<TD colSpan="3"><div id="blogsite">
+			<a href="http://www.cnblogs.com">博客园</a>&nbsp;&nbsp;
+			<a href="http://www.blogjava.net">BlogJava</a>&nbsp;&nbsp;
+			<a href="http://www.cnweblog.com">博客生活</a>&nbsp;&nbsp;
+			<a href="http://www.cnitblog.com">IT博客网</a>&nbsp;&nbsp;
+			<a href="http://www.cppblog.com">C++博客</a>&nbsp;&nbsp;
+			<a href="http://www.phpweblog.net">PHP博客</a>&nbsp;&nbsp;
+			<a href="http://space.cnblogs.com">博客园社区</a>
+			</div></TD>
+		</TR>
+		<TR>
+			<TD colSpan="3" height="5">相关链接:<br/>
+			<script language="javascript">
+			var title = document.title;
+			function GetMeta(ametaName){
+			var METAs = document.getElementsByTagName("meta"); //这个是根结点
+			for (var i=0; i<METAs.length; i++) { //简单的遍历（指body的孩子下的深度为1)
+			if(METAs[i].name.toLowerCase()==ametaName){return (METAs[i].content);}
+			};
+			return "";
+			}
+			document.write("<script type='text/javascript' src='http://a4.yeshj.com/adwords/EN017?num=7&title="+ encodeURIComponent(title) +"&tag="+ encodeURIComponent(GetMeta("keywords")) +"'></scri"+"pt>");
+			</script></TD>
+		</TR>
+		<TR>
+			<TD colSpan="3" height="5">
+<div id="divRelativePosts">
+相关文章:
+	
+			<ul style="margin-top:0px;">
+		
+			<li style='list-style:none;'>
+				<a id="AjaxHolder_PostComment_ctl06_RelativePostsList_ctl01_Hyperlink1" href="http://www.cnitblog.com/wangk/archive/2007/11/09/36055.html">add modify remarks marco for vs2003 </a>
+			</li>
+		
+			<li style='list-style:none;'>
+				<a id="AjaxHolder_PostComment_ctl06_RelativePostsList_ctl02_Hyperlink1" href="http://www.cnitblog.com/wangk/archive/2006/11/17/19251.html">从打开的文件句柄获得文件的路径</a>
+			</li>
+		
+			<li style='list-style:none;'>
+				<a id="AjaxHolder_PostComment_ctl06_RelativePostsList_ctl03_Hyperlink1" href="http://www.cnitblog.com/wangk/archive/2006/03/29/8260.html">Rebase Position</a>
+			</li>
+		
+			<li style='list-style:none;'>
+				<a id="AjaxHolder_PostComment_ctl06_RelativePostsList_ctl04_Hyperlink1" href="http://www.cnitblog.com/wangk/archive/2006/01/09/6091.html">解决Linker Tools Error LNK1103</a>
+			</li>
+		
+			<li style='list-style:none;display:none'>
+				<a id="AjaxHolder_PostComment_ctl06_RelativePostsList_ctl05_Hyperlink1" href="http://www.cnitblog.com/wangk/archive/2005/12/31/5942.html">HTTP服务器上断点下载文件</a>
+			</li>
+		
+			<li style='list-style:none;'>
+				<a id="AjaxHolder_PostComment_ctl06_RelativePostsList_ctl06_Hyperlink1" href="http://www.cnitblog.com/wangk/archive/2005/12/15/5410.html">如何在程序崩溃时，获取相应的信息</a>
+			</li>
+		
+			<li style='list-style:none;'>
+				<a id="AjaxHolder_PostComment_ctl06_RelativePostsList_ctl07_Hyperlink1" href="http://www.cnitblog.com/wangk/archive/2005/12/14/5377.html">使用GetPrivateProfile系列函数的困惑</a>
+			</li>
+		
+			<li style='list-style:none;'>
+				<a id="AjaxHolder_PostComment_ctl06_RelativePostsList_ctl08_Hyperlink1" href="http://www.cnitblog.com/wangk/archive/2005/12/14/5369.html">如何调试MFC中的内存泄漏</a>
+			</li>
+		
+			<li style='list-style:none;'>
+				<a id="AjaxHolder_PostComment_ctl06_RelativePostsList_ctl09_Hyperlink1" href="http://www.cnitblog.com/wangk/archive/2005/12/12/5306.html">Vc Release 时自动增加版本</a>
+			</li>
+		
+			<li style='list-style:none;'>
+				<a id="AjaxHolder_PostComment_ctl06_RelativePostsList_ctl10_Hyperlink1" href="http://www.cnitblog.com/wangk/archive/2005/12/12/5299.html">如何通过托盘图标得到该所属进程</a>
+			</li>
+		
+			</ul>
+		
+</div>
+</TD>
+		</TR>
+		<TR>
+			<TD colSpan="3"></TD>
+		</TR>
+		<TR>
+			<TD colSpan="3">
+				
+<br/><br/>
+<iframe marginheight="0" marginwidth="0" frameborder="0" width="468" height="60" scrolling="no" src="/ad.htm" style="border:0px solid #666" allowTransparency="true"></iframe>
+<br/></TD>
+		</TR>
+	</TABLE>	
+</div>
+<div id="AjaxHolder_PostComment_ValidationSummary1" style="color:Red;display:none;">
+
+	</div>
+</div>
+</div>
+
+				
+			<div class="spacer">&nbsp;</div>
+		</div>
+		
+<div class="footer">
+	Powered by: 
+	<br />
+	
+	<a id="Footer1_Hyperlink3" NAME="Hyperlink1" href="http://www.cnitblog.com/" style="font-family:Verdana;font-size:12px;">IT博客</a>
+	<br />
+	Copyright &copy; 孤独的夜
+</div>
+	</div>
+
+    
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_ValidationSummaries =  new Array(document.getElementById("AjaxHolder_PostComment_ValidationSummary1"));
+var Page_Validators =  new Array(document.getElementById("AjaxHolder_PostComment_RequiredFieldValidator1"), document.getElementById("AjaxHolder_PostComment_RequiredFieldValidator2"), document.getElementById("AjaxHolder_PostComment_Requiredfieldvalidator4"), document.getElementById("AjaxHolder_PostComment_RequiredFieldValidator3"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var AjaxHolder_PostComment_RequiredFieldValidator1 = document.all ? document.all["AjaxHolder_PostComment_RequiredFieldValidator1"] : document.getElementById("AjaxHolder_PostComment_RequiredFieldValidator1");
+AjaxHolder_PostComment_RequiredFieldValidator1.controltovalidate = "AjaxHolder_PostComment_tbTitle";
+AjaxHolder_PostComment_RequiredFieldValidator1.errormessage = "请输入标题";
+AjaxHolder_PostComment_RequiredFieldValidator1.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+AjaxHolder_PostComment_RequiredFieldValidator1.initialvalue = "";
+var AjaxHolder_PostComment_RequiredFieldValidator2 = document.all ? document.all["AjaxHolder_PostComment_RequiredFieldValidator2"] : document.getElementById("AjaxHolder_PostComment_RequiredFieldValidator2");
+AjaxHolder_PostComment_RequiredFieldValidator2.controltovalidate = "AjaxHolder_PostComment_tbName";
+AjaxHolder_PostComment_RequiredFieldValidator2.errormessage = "请输入你的姓名";
+AjaxHolder_PostComment_RequiredFieldValidator2.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+AjaxHolder_PostComment_RequiredFieldValidator2.initialvalue = "";
+var AjaxHolder_PostComment_Requiredfieldvalidator4 = document.all ? document.all["AjaxHolder_PostComment_Requiredfieldvalidator4"] : document.getElementById("AjaxHolder_PostComment_Requiredfieldvalidator4");
+AjaxHolder_PostComment_Requiredfieldvalidator4.controltovalidate = "AjaxHolder_PostComment_CodeNumberTextBox";
+AjaxHolder_PostComment_Requiredfieldvalidator4.errormessage = "请输入验证码";
+AjaxHolder_PostComment_Requiredfieldvalidator4.display = "Dynamic";
+AjaxHolder_PostComment_Requiredfieldvalidator4.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+AjaxHolder_PostComment_Requiredfieldvalidator4.initialvalue = "";
+var AjaxHolder_PostComment_RequiredFieldValidator3 = document.all ? document.all["AjaxHolder_PostComment_RequiredFieldValidator3"] : document.getElementById("AjaxHolder_PostComment_RequiredFieldValidator3");
+AjaxHolder_PostComment_RequiredFieldValidator3.controltovalidate = "AjaxHolder_PostComment_tbComment";
+AjaxHolder_PostComment_RequiredFieldValidator3.errormessage = "请输入评论内容";
+AjaxHolder_PostComment_RequiredFieldValidator3.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+AjaxHolder_PostComment_RequiredFieldValidator3.initialvalue = "";
+var AjaxHolder_PostComment_ValidationSummary1 = document.all ? document.all["AjaxHolder_PostComment_ValidationSummary1"] : document.getElementById("AjaxHolder_PostComment_ValidationSummary1");
+AjaxHolder_PostComment_ValidationSummary1.showmessagebox = "True";
+AjaxHolder_PostComment_ValidationSummary1.showsummary = "False";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        
+document.getElementById('AjaxHolder_PostComment_ValidationSummary1').dispose = function() {
+    Array.remove(Page_ValidationSummaries, document.getElementById('AjaxHolder_PostComment_ValidationSummary1'));
+}
+Sys.Application.initialize();
+
+document.getElementById('AjaxHolder_PostComment_RequiredFieldValidator1').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('AjaxHolder_PostComment_RequiredFieldValidator1'));
+}
+
+document.getElementById('AjaxHolder_PostComment_RequiredFieldValidator2').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('AjaxHolder_PostComment_RequiredFieldValidator2'));
+}
+
+document.getElementById('AjaxHolder_PostComment_Requiredfieldvalidator4').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('AjaxHolder_PostComment_Requiredfieldvalidator4'));
+}
+
+document.getElementById('AjaxHolder_PostComment_RequiredFieldValidator3').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('AjaxHolder_PostComment_RequiredFieldValidator3'));
+}
+//]]>
+</script>
+</form>
+    <script type="text/javascript" src="/script/ShowHidden.js"></script>
+	<div>
+	<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+	try {
+	var pageTracker = _gat._getTracker("UA-476124-12");
+	pageTracker._trackPageview();
+	} catch(err) {}</script>
+	</div>
+</body>
+</html>

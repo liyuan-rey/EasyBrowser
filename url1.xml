@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<load>
+	<urlnum>2</urlnum>
+	<url1>www.66w.com</url1>
+	<url2>www.163.com</url2>
+	<version>
+		<num>1005</num>
+		<fileurl> http://www.66w.com/update.exe</fileurl>
+	</version>
+</load>
