@@ -8,6 +8,7 @@
 #endif
 
 #include "resource.h"		// Ö÷·ûºÅ
+#include "DownloadFile.h"
 
 #define VERSION_NUM 1005
 
@@ -29,6 +30,8 @@ public:
 
 	CString path1Url;
 	CString path2Url;
+	CDownloadFile m_DownFile1;
+	CDownloadFile m_DownFile2;
 
 	int browserIndex;
 // ÖØÐ´

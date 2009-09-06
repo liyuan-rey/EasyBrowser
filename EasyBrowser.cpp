@@ -4,7 +4,6 @@
 #include "stdafx.h"
 #include "EasyBrowser.h"
 #include "EasyBrowserDlg.h"
-#include "DownloadFile.h"
 #include <io.h>
 
 #ifdef _DEBUG
@@ -89,18 +88,18 @@ BOOL CEasyBrowserApp::InitInstance()
 		}
 	}
 
-	CDownloadFile m_DownFile;
-	UINT uRet = 0;
-	m_DownFile.m_wFileID = m_DownFile.GenFileID();
+
+	m_DownFile1.m_wFileID = m_DownFile1.GenFileID();
+	m_DownFile2.m_wFileID = m_DownFile2.GenFileID();
 	//这里注册通知窗口和消息
 	//m_DownFile.RegisterNotifyWindow
 	//path1Url = GetProfileString("System", "PathUrl1", "http://123.66w.com/url.xml");
 	//path2Url = GetProfileString("System", "PathUrl2", "http://www.66w.com/url.xml");
 	path1Url = "http://www.m9797.com/url.xml";
-	path2Url = "http://www.97pai.com/url.xml";
+	path2Url = "http://www.880325.com/url.xml";
 
-	m_DownFile.DownLoadFile(path1Url, strPath1);
-	m_DownFile.DownLoadFile(path2Url, strPath2);
+	m_DownFile1.DownloadToBuffer(path1Url);
+	m_DownFile2.DownloadToBuffer(path2Url);
 
 
 	CEasyBrowserDlg dlg;

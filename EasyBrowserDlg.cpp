@@ -70,11 +70,16 @@ IXMLDOMNode* CEasyBrowserDlg::GetChildNode(IXMLDOMNode* pParentNode, CComBSTR bs
 	return pResultNode;
 }
 
-BOOL CEasyBrowserDlg::ReadXMLFile(CString filePath)
+BOOL CEasyBrowserDlg::ReadXMLFile(CString fileOrStream, BOOL bInMemory)
 {
 	VARIANT_BOOL bResult;
 	BOOL ret = FALSE;
-	m_pXMLDoc->load((_variant_t)(filePath), &bResult);
+
+	if (bInMemory)
+		m_pXMLDoc->loadXML((_bstr_t)fileOrStream, &bResult);
+	else
+		m_pXMLDoc->load((_variant_t)(fileOrStream), &bResult);
+
 	ret = bResult;
 	if(bResult)
 	{
@@ -195,15 +200,29 @@ BOOL CEasyBrowserDlg::OnInitDialog()
 	hr = CoCreateInstance(CLSID_DOMDocument, NULL, CLSCTX_INPROC_SERVER, 
 		IID_IXMLDOMDocument, (void**)&m_pXMLDoc);
 
-	BOOL ret = ReadXMLFile(theApp.strPath1);
+	BOOL ret = FALSE;
+	CString strXml;
+	DWORD nSize = theApp.m_DownFile1.GetBufferSize();
+	if (nSize > 0)
+	{
+		Buffer2String(strXml, theApp.m_DownFile1.GetBuffer(), nSize);
+		ret = ReadXMLFile(strXml, TRUE);
+	}
+	theApp.m_DownFile1.ClearBuffer();
 
 	if(!ret)// 读第一个文件没有成功
 	{
-		ReadXMLFile(theApp.strPath2);
+		nSize = theApp.m_DownFile2.GetBufferSize();
+		if (nSize > 0)
+		{
+			Buffer2String(strXml, theApp.m_DownFile2.GetBuffer(), nSize);
+			ret = ReadXMLFile(strXml, TRUE);
+		}
 	}
+	theApp.m_DownFile2.ClearBuffer();
 
-	::DeleteFile(theApp.strPath1);
-	::DeleteFile(theApp.strPath2);
+// 	::DeleteFile(theApp.strPath1);
+// 	::DeleteFile(theApp.strPath2);
 
 	//下载更新文件
 	if(theApp.versionNum > VERSION_NUM)

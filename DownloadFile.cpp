@@ -32,13 +32,24 @@
           m_hNotify   =   NULL;   
           m_dwMsgID   =   0;   
           m_wFileID   =   0;   
+		  m_pBuffer = NULL;
+		  m_nBufferSize = 0L;
   }   
     
   CDownloadFile::~CDownloadFile()   
   {   
-    
-  }   
-    
+	ClearBuffer();
+  }
+
+  void CDownloadFile::ClearBuffer()
+  {
+	  if (m_pBuffer != NULL)
+		  HeapFree(GetProcessHeap(), 0L, m_pBuffer);
+
+	  m_pBuffer = NULL;
+	  m_nBufferSize = 0L;
+  }
+
   BOOL   CDownloadFile::DownLoadFile(LPCTSTR   lpFileURL,   LPCTSTR   lpSaveFile)   
   {   
           BOOL   bRet   =   FALSE;   
@@ -48,55 +59,9 @@
           }   
           m_strSaveToFile   =   lpSaveFile;   
           m_strFileURL   =   lpFileURL;   
-          m_strTmpFileName   =   lpSaveFile;   
+		  m_strTmpFileName   =   lpSaveFile;   
           m_strTmpFileName   +=   _T(".df!");   
-          CString   strServer,strObject;
-		  INTERNET_PORT   nPort;   
-          CString   strAgentCaption   =     _T("Update   Download   ")   ;   
-          strAgentCaption   +=   ::PathFindFileName(lpSaveFile);   
-          DWORD   dwFlags   =   0;   
-          InternetGetConnectedState(&dwFlags,   0);   
-          CInternetSession   session   (   strAgentCaption,   1,   
-			  (dwFlags   &   INTERNET_CONNECTION_PROXY)   ==   INTERNET_CONNECTION_PROXY   ?   INTERNET_OPEN_TYPE_PRECONFIG   :   INTERNET_OPEN_TYPE_PRECONFIG_WITH_NO_AUTOPROXY,   
-			  NULL,   NULL,   0);   
-		  AfxParseURL(m_strFileURL,dwFlags,strServer,strObject,nPort);   
-
-		  if   (m_TimeOut   !=   0)   
-			  session.SetOption(INTERNET_OPTION_DATA_RECEIVE_TIMEOUT,   m_TimeOut);   
-		  if(   !m_wFileID   )   
-			  m_wFileID   =   GenFileID();   
-		  //PostNotifyMessage(NOTIFY_MSG_WPARAM_GENDOWNFILEID,m_wFileID);   
-
-		  try   
-		  {   
-			  if   (   dwFlags==   AFX_INET_SERVICE_HTTP   )   
-			  {   
-				  bRet   =   GetHttpFile(session);   
-			  }   
-			  else   if(   dwFlags==   AFX_INET_SERVICE_FTP   )   
-			  {   
-				  bRet   =   GetFtpFile(session);   
-			  }   
-			  else   if(   dwFlags==   AFX_INET_SERVICE_FILE   )   
-			  {   
-				  if(   UrlIsFileUrl(m_strFileURL)   )   
-					  bRet   =   GetUNCFile();   
-			  }   
-			  else   
-			  {   
-				  ;   
-			  }           
-		  }   
-		  catch   (CException*   pEx)   
-		  {   
-			  TCHAR   szErrorMsg[MAX_PATH]   =   {0};   
-			  pEx->GetErrorMessage(szErrorMsg,   MAX_PATH);   
-			  TRACE(   _T("Exception:   %s\n")   ,   szErrorMsg);   
-			  pEx->Delete();   
-		  }   
-
-		  session.Close();   
-		  m_wFileID   =   0;   
+		  bRet = Download(TRUE);
 		  if   (bRet)   
 		  {   
 			  if   (!::MoveFileEx(m_strTmpFileName,m_strSaveToFile,MOVEFILE_REPLACE_EXISTING)   )   
@@ -107,6 +72,78 @@
 		  }   
 		  return   bRet;   
   }   
+
+  BOOL   CDownloadFile::DownloadToBuffer(LPCTSTR   lpFileURL)
+  {
+	  BOOL bRet = FALSE;
+	  if (!::PathIsURL(lpFileURL))
+		  return   bRet;   
+
+	  m_strFileURL = lpFileURL;
+
+	  ClearBuffer();
+	  bRet = Download(FALSE);
+
+	  return bRet;
+  }
+
+  BOOL   CDownloadFile::Download(BOOL bSaveToFile)
+  {
+	  BOOL bRet = FALSE;
+	  CString   strAgentCaption   =     _T("Update   Download   ")   ;   
+	  strAgentCaption   +=   ::PathFindFileName(m_strSaveToFile);   
+	  DWORD   dwFlags   =   0;   
+	  InternetGetConnectedState(&dwFlags,   0);   
+	  CInternetSession   session   (   strAgentCaption,   1,   
+		  (dwFlags   &   INTERNET_CONNECTION_PROXY)   ==   INTERNET_CONNECTION_PROXY   ?   INTERNET_OPEN_TYPE_PRECONFIG   :   INTERNET_OPEN_TYPE_PRECONFIG_WITH_NO_AUTOPROXY,   
+		  NULL,   NULL,   0);   
+	  CString   strServer,strObject;
+	  INTERNET_PORT   nPort;   
+	  AfxParseURL(m_strFileURL,dwFlags,strServer,strObject,nPort);   
+
+	  if   (m_TimeOut   !=   0)   
+		  session.SetOption(INTERNET_OPTION_DATA_RECEIVE_TIMEOUT,   m_TimeOut);   
+	  if(   !m_wFileID   )   
+		  m_wFileID   =   GenFileID();   
+	  //PostNotifyMessage(NOTIFY_MSG_WPARAM_GENDOWNFILEID,m_wFileID);   
+
+	  try   
+	  {   
+		  if   (   dwFlags==   AFX_INET_SERVICE_HTTP   )   
+		  {   
+			  if (bSaveToFile)
+				  bRet   =   GetHttpFile(session);   
+			  else
+				  bRet   =   GetHttpFileToBuffer(session);
+		  }   
+		  else   if(   dwFlags==   AFX_INET_SERVICE_FTP   )   
+		  {   
+			  ASSERT(bSaveToFile); // save to buffer not implemented
+			  bRet   =   GetFtpFile(session);   
+		  }   
+		  else   if(   dwFlags==   AFX_INET_SERVICE_FILE   )   
+		  {   
+			  ASSERT(bSaveToFile); // save to buffer not implemented
+			  if(   UrlIsFileUrl(m_strFileURL)   )   
+				  bRet   =   GetUNCFile();   
+		  }   
+		  else   
+		  {   
+			  ;   
+		  }           
+	  }   
+	  catch   (CException*   pEx)   
+	  {   
+		  TCHAR   szErrorMsg[MAX_PATH]   =   {0};   
+		  pEx->GetErrorMessage(szErrorMsg,   MAX_PATH);   
+		  TRACE(   _T("Exception:   %s\n")   ,   szErrorMsg);   
+		  pEx->Delete();   
+	  }   
+
+	  session.Close();   
+	  m_wFileID   =   0;   
+	  return bRet;
+  }
 
   BOOL   CDownloadFile::GetHttpFile(CInternetSession   &cSession)   
   {   
@@ -214,6 +251,117 @@
 		  delete pFile; 
 	  }       
 	  return bRet;
+}
+
+BOOL   CDownloadFile::GetHttpFileToBuffer(CInternetSession   &cSession)   
+{   
+	CHttpFile*   pFile   =   NULL;   
+	CString   strTmpURL   =   m_strFileURL;   
+	try   
+	{   
+		DWORD   dwFlags   =   INTERNET_FLAG_TRANSFER_BINARY     
+			|INTERNET_FLAG_DONT_CACHE   
+			|INTERNET_FLAG_PRAGMA_NOCACHE;   
+		if   (m_bForceReload)   {   
+			dwFlags   |=   INTERNET_FLAG_RELOAD;   
+		}   
+		//Here   Find   URLFile   Redirect.   
+		//              
+		OpenRedirectHttpURL(strTmpURL,cSession);   
+		pFile   =   (CHttpFile*)   cSession.OpenURL(strTmpURL,   1,   dwFlags,szHeaders,   -1);   
+	}   
+	catch   (CInternetException*   e)   
+	{   
+		TCHAR       szCause[MAX_PATH]   =   {0};   
+		e->GetErrorMessage(szCause,   MAX_PATH);   
+		e->Delete();   
+		delete   pFile;   
+		pFile   =   NULL;   
+		return   FALSE;   
+	}
+
+	if (!pFile)
+		return FALSE;
+
+	////////////////////////
+	COleDateTime startTime = COleDateTime::GetCurrentTime();
+
+	try
+	{     
+		DWORD dwHttpFileSize = 0;
+		pFile->QueryInfo(HTTP_QUERY_CONTENT_LENGTH | HTTP_QUERY_FLAG_NUMBER,dwHttpFileSize);   
+		//PostNotifyMessage(MAKEWPARAM(NOTIFY_MSG_LOW_WPARAM_FULLSIZE,m_wFileID),dwHttpFileSize);  
+		TRACE( _T("Totoal Length is %d\n"), dwHttpFileSize ); 
+
+		DWORD dwAllocSize = dwHttpFileSize;
+		m_pBuffer = (BYTE*) HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, dwAllocSize);
+		if (!m_pBuffer)
+			throw new CMemoryException();
+
+		DWORD dwCount = 0;
+		UINT nRead = 0;
+		BYTE buffer[BUFFER_SIZE+1] = {0};
+
+		do     
+		{        
+			nRead = pFile->Read(buffer, BUFFER_SIZE);   
+			if (nRead > 0)    
+			{
+				buffer[nRead] = 0;
+
+				if (dwCount + nRead > dwAllocSize)
+				{
+					m_pBuffer = (BYTE*) HeapReAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, m_pBuffer, dwAllocSize + nRead * 2);
+					if (!m_pBuffer)
+						throw new CMemoryException();
+				}
+
+				CopyMemory(m_pBuffer + dwCount, buffer, nRead);
+				dwCount += nRead;
+
+				COleDateTimeSpan elapsed = COleDateTime::GetCurrentTime() - startTime;  
+				double dSecs = elapsed.GetTotalSeconds();  
+				//PostNotifyMessage(MAKEWPARAM(NOTIFY_MSG_LOW_WPARAM_DOWNSIZE,m_wFileID),dwCount);    
+				if (dSecs > 0.0)            
+				{                       
+					m_transferRate = (float) ( dwCount / 1024.0 / dSecs );     
+					TRACE("Read %d bytes (%0.1f Kb/s)\n", dwCount, m_transferRate );  
+				}                  
+				else            
+				{               
+					TRACE("Read %d bytes\n", dwCount);   
+					m_transferRate = (float) ( dwCount / 1024.0 );     
+				}              
+				//PostNotifyMessage(MAKEWPARAM(NOTIFY_MSG_LOW_WPARAM_DOWNSPEED,m_wFileID),(LPARAM)m_transferRate); 
+			}       
+		}         
+		while (nRead > 0);
+
+		m_nBufferSize = dwCount;
+	}       
+	catch (CFileException *e)   
+	{         
+		TCHAR   szCause[MAX_PATH] = {0};  
+		e->GetErrorMessage(szCause, MAX_PATH); 
+		TRACE("ErrorMsg : %s\n", szCause);       
+		e->Delete();  
+		delete pFile;   
+		return FALSE;   
+	}   
+	catch (CMemoryException *me)
+	{
+		TRACE("out of memory...\n");
+		me->Delete();
+		delete pFile;
+		return FALSE;
+	}
+
+	pFile->QueryInfoStatusCode(m_infoStatusCode);   
+	pFile->QueryInfo(HTTP_QUERY_RAW_HEADERS ,m_rawHeaders);  
+	pFile->Close();    
+	delete pFile; 
+
+	return TRUE;
 }
 
 BOOL CDownloadFile::OpenRedirectHttpURL(CString &strOldLocation,CInternetSession &cSession)

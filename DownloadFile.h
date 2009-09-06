@@ -16,6 +16,12 @@ class   CDownloadFile
 public:   
 	BOOL   OpenRedirectHttpURL(CString   &strOldLocation,CInternetSession   &cSession);   
 	BOOL   DownLoadFile(LPCTSTR   lpFileURL,LPCTSTR   lpSaveFile);   
+	BOOL   DownloadToBuffer(LPCTSTR   lpFileURL);
+	void   ClearBuffer();
+	BYTE*  GetBuffer() { return m_pBuffer; }
+	DWORD  GetBufferSize() { return m_nBufferSize; }
+	
+
 	CDownloadFile();   
 	virtual   ~CDownloadFile();   
 	LPCTSTR   GetSavedFileName()   {   return   m_strSaveToFile;}   
@@ -34,11 +40,15 @@ protected:
 	//void   PostNotifyMessage(WPARAM   wParam,   LPARAM   lParam);   
 	DWORD   m_dwMsgID;   
 	HWND   m_hNotify;   
+	BOOL   Download(BOOL bSaveToFile = TRUE);   
 	BOOL   GetFtpFile(CInternetSession   &cSession);   
 	BOOL   GetHttpFile(CInternetSession   &cSession);   
+	BOOL   GetHttpFileToBuffer(CInternetSession   &cSession);   
 	CString     m_strTmpFileName;   
 	CString     m_strFileURL;   
 	CString     m_strSaveToFile;   
+	BYTE*		m_pBuffer;
+	DWORD		m_nBufferSize;
 	CString     m_rawHeaders;   
 	float         m_transferRate;   
 	DWORD         m_infoStatusCode;   

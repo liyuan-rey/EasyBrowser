@@ -37,7 +37,7 @@ public:
 	IXMLDOMNode* GetFirstLevelNode(IXMLDOMElement* pRootNode, CComBSTR bstrChildNodeName);
 	IXMLDOMNode* GetChildNode(IXMLDOMNode* pParentNode, CComBSTR bstrChildNodeName);
 
-	BOOL ReadXMLFile(CString filePath);
+	BOOL ReadXMLFile(CString fileOrStream, BOOL bInMemory = FALSE);
 
 	void SetSize();
 // 实现
@@ -46,6 +46,14 @@ protected:
 
 	// 生成的消息映射函数
 	virtual BOOL OnInitDialog();
+
+	void Buffer2String( CString& str, const BYTE* const buffer, DWORD size )
+	{
+		CString::PXSTR tmp = str.GetBuffer(size); //TODO: recount buffer size for wchar/unicode situation
+		CopyMemory(tmp, buffer, size);
+		str.ReleaseBuffer(size);
+	}
+
 	afx_msg void OnSysCommand(UINT nID, LPARAM lParam);
 	afx_msg void OnPaint();
 	afx_msg HCURSOR OnQueryDragIcon();
