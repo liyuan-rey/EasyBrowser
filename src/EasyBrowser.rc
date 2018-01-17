@@ -48,8 +48,8 @@ BEGIN
     "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
     "LANGUAGE 4, 2\r\n"
     "#pragma code_page(936)\r\n"
-    "#include ""res\\EasyBrowser.rc2""  // ∑« Microsoft Visual C++ ±‡º≠π˝µƒ◊ ‘¥\r\n"
-    "#include ""afxres.rc""         // ±Í◊º◊Èº˛\r\n"
+    "#include ""res\\EasyBrowser.rc2""  // Èùû Microsoft Visual C++ ÁºñËæëËøáÁöÑËµÑÊ∫ê\r\n"
+    "#include ""afxres.rc""         // Ê†áÂáÜÁªÑ‰ª∂\r\n"
     "#endif\r\n"
     "\0"
 END
@@ -74,14 +74,14 @@ IDR_MAINFRAME           ICON                    "res\\EasyBrowser.ico"
 IDD_ABOUTBOX DIALOGEX 0, 0, 235, 55
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
     WS_SYSMENU
-CAPTION "πÿ”⁄ EasyBrowser"
+CAPTION "ÂÖ≥‰∫é EasyBrowser"
 FONT 9, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
     ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
     LTEXT           "EasyBrowser Version 1.0",IDC_STATIC,40,10,119,8,
                     SS_NOPREFIX
     LTEXT           "Copyright (C) 2009",IDC_STATIC,40,25,119,8
-    DEFPUSHBUTTON   "»∑∂®",IDOK,178,7,50,16,WS_GROUP
+    DEFPUSHBUTTON   "Á°ÆÂÆö",IDOK,178,7,50,16,WS_GROUP
 END
 
 IDD_EASYBROWSER_DIALOG DIALOGEX 0, 0, 527, 349
@@ -126,19 +126,19 @@ BEGIN
     BEGIN
         BLOCK "080403a8"
         BEGIN
-            VALUE "CompanyName", "TODO: <π´Àæ√˚>"
-            VALUE "FileDescription", "TODO: <Œƒº˛Àµ√˜>"
+            VALUE "CompanyName", "TODO: <ÂÖ¨Âè∏Âêç>"
+            VALUE "FileDescription", "TODO: <Êñá‰ª∂ËØ¥Êòé>"
             VALUE "FileVersion", "1.0.0.1"
             VALUE "InternalName", "EasyBrowser.exe"
-            VALUE "LegalCopyright", "TODO: (C) <π´Àæ√˚>°£±£¡ÙÀ˘”–»®¿˚°£"
+            VALUE "LegalCopyright", "TODO: (C) <ÂÖ¨Âè∏Âêç>„ÄÇ‰øùÁïôÊâÄÊúâÊùÉÂà©„ÄÇ"
             VALUE "OriginalFilename", "EasyBrowser.exe"
-            VALUE "ProductName", "TODO: <≤˙∆∑√˚>"
+            VALUE "ProductName", "TODO: <‰∫ßÂìÅÂêç>"
             VALUE "ProductVersion", "1.0.0.1"
         END
     END
     BLOCK "VarFileInfo"
     BEGIN
-        VALUE "∑≠“Î", 0x804, 936
+        VALUE "ÁøªËØë", 0x804, 936
     END
 END
 
@@ -197,7 +197,7 @@ IDB_BITMAP_CLOSE        BITMAP                  "res\\bitmap1.bmp"
 
 STRINGTABLE 
 BEGIN
-    IDS_ABOUTBOX            "πÿ”⁄ EasyBrowser(&A)..."
+    IDS_ABOUTBOX            "ÂÖ≥‰∫é EasyBrowser(&A)..."
 END
 
 #endif    // Chinese (P.R.C.) resources
@@ -218,8 +218,8 @@ END
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
 LANGUAGE 4, 2
 #pragma code_page(936)
-#include "res\EasyBrowser.rc2"  // ∑« Microsoft Visual C++ ±‡º≠π˝µƒ◊ ‘¥
-#include "afxres.rc"         // ±Í◊º◊Èº˛
+#include "res\EasyBrowser.rc2"  // Èùû Microsoft Visual C++ ÁºñËæëËøáÁöÑËµÑÊ∫ê
+#include "afxres.rc"         // Ê†áÂáÜÁªÑ‰ª∂
 #endif
 
 /////////////////////////////////////////////////////////////////////////////

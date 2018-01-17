@@ -1,4 +1,4 @@
-// EasyBrowserDlg.h : Í·ÎÄ¼ş
+// EasyBrowserDlg.h : å¤´æ–‡ä»¶
 //
 
 #pragma once
@@ -7,25 +7,28 @@
 #include <vector>
 #include "afxcmn.h"
 using namespace std;
-// CEasyBrowserDlg ¶Ô»°¿ò
+// CEasyBrowserDlg å¯¹è¯æ¡†
 class CEasyBrowserDlg : public CDialog
 {
-// ¹¹Ôì
-public:
-	CEasyBrowserDlg(CWnd* pParent = NULL);	// ±ê×¼¹¹Ôìº¯Êı
+	// æ„é€ 
+  public:
+	CEasyBrowserDlg(CWnd *pParent = NULL); // æ ‡å‡†æ„é€ å‡½æ•°
 
-// ¶Ô»°¿òÊı¾İ
-	enum { IDD = IDD_EASYBROWSER_DIALOG };
+	// å¯¹è¯æ¡†æ•°æ®
+	enum
+	{
+		IDD = IDD_EASYBROWSER_DIALOG
+	};
 
-	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV Ö§³Ö
+  protected:
+	virtual void DoDataExchange(CDataExchange *pDX); // DDX/DDV æ”¯æŒ
 
-public:
+  public:
 	DWORD m_dwTabLen;
 	BOOL m_bInit;
 	CMyTabCtrl m_ctrTab;
 	vector<CString> m_vecUrls;
-	vector<CDlgBrowser*> m_vecBrowser;
+	vector<CDlgBrowser *> m_vecBrowser;
 
 	int curSel;
 	CImageList m_imageTab;
@@ -33,21 +36,21 @@ public:
 	// XML
 	IXMLDOMDocument *m_pXMLDoc;
 
-public:
-	IXMLDOMNode* GetFirstLevelNode(IXMLDOMElement* pRootNode, CComBSTR bstrChildNodeName);
-	IXMLDOMNode* GetChildNode(IXMLDOMNode* pParentNode, CComBSTR bstrChildNodeName);
+  public:
+	IXMLDOMNode *GetFirstLevelNode(IXMLDOMElement *pRootNode, CComBSTR bstrChildNodeName);
+	IXMLDOMNode *GetChildNode(IXMLDOMNode *pParentNode, CComBSTR bstrChildNodeName);
 
 	BOOL ReadXMLFile(CString fileOrStream, BOOL bInMemory = FALSE);
 
 	void SetSize();
-// ÊµÏÖ
-protected:
+	// å®ç°
+  protected:
 	HICON m_hIcon;
 
-	// Éú³ÉµÄÏûÏ¢Ó³Éäº¯Êı
+	// ç”Ÿæˆçš„æ¶ˆæ¯æ˜ å°„å‡½æ•°
 	virtual BOOL OnInitDialog();
 
-	void Buffer2String( CString& str, const BYTE* const buffer, DWORD size )
+	void Buffer2String(CString &str, const BYTE *const buffer, DWORD size)
 	{
 		CString::PXSTR tmp = str.GetBuffer(size); //TODO: recount buffer size for wchar/unicode situation
 		CopyMemory(tmp, buffer, size);
@@ -58,11 +61,11 @@ protected:
 	afx_msg void OnPaint();
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
-public:
+  public:
 	afx_msg void OnBnClickedOk();
 	afx_msg void OnBnClickedCancel();
 	afx_msg void OnSize(UINT nType, int cx, int cy);
 	afx_msg void OnDestroy();
 	afx_msg void OnTcnSelchangeTabEasybw(NMHDR *pNMHDR, LRESULT *pResult);
-	virtual BOOL PreTranslateMessage(MSG* pMsg);
+	virtual BOOL PreTranslateMessage(MSG *pMsg);
 };

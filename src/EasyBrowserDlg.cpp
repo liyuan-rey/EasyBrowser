@@ -1,33 +1,36 @@
-// EasyBrowserDlg.cpp : ÊµÏÖÎÄ¼ş
+// EasyBrowserDlg.cpp : å®ç°æ–‡ä»¶
 //
 
 #include "stdafx.h"
 #include "EasyBrowser.h"
 #include "EasyBrowserDlg.h"
-#include  <comdef.h>
+#include <comdef.h>
 #include ".\easybrowserdlg.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
 
-extern UINT ThreadDownSingleFile( LPVOID pParam );
+extern UINT ThreadDownSingleFile(LPVOID pParam);
 
-// ÓÃÓÚÓ¦ÓÃ³ÌĞò¡°¹ØÓÚ¡±²Ëµ¥ÏîµÄ CAboutDlg ¶Ô»°¿ò
+// ç”¨äºåº”ç”¨ç¨‹åºâ€œå…³äºâ€èœå•é¡¹çš„ CAboutDlg å¯¹è¯æ¡†
 
 class CAboutDlg : public CDialog
 {
-public:
+  public:
 	CAboutDlg();
 
-// ¶Ô»°¿òÊı¾İ
-	enum { IDD = IDD_ABOUTBOX };
+	// å¯¹è¯æ¡†æ•°æ®
+	enum
+	{
+		IDD = IDD_ABOUTBOX
+	};
 
-	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV Ö§³Ö
+  protected:
+	virtual void DoDataExchange(CDataExchange *pDX); // DDX/DDV æ”¯æŒ
 
-// ÊµÏÖ
-protected:
+	// å®ç°
+  protected:
 	DECLARE_MESSAGE_MAP()
 };
 
@@ -35,7 +38,7 @@ CAboutDlg::CAboutDlg() : CDialog(CAboutDlg::IDD)
 {
 }
 
-void CAboutDlg::DoDataExchange(CDataExchange* pDX)
+void CAboutDlg::DoDataExchange(CDataExchange *pDX)
 {
 	CDialog::DoDataExchange(pDX);
 }
@@ -43,28 +46,27 @@ void CAboutDlg::DoDataExchange(CDataExchange* pDX)
 BEGIN_MESSAGE_MAP(CAboutDlg, CDialog)
 END_MESSAGE_MAP()
 
-
-IXMLDOMNode* CEasyBrowserDlg::GetFirstLevelNode(IXMLDOMElement* pRootNode, CComBSTR bstrChildNodeName)
+IXMLDOMNode *CEasyBrowserDlg::GetFirstLevelNode(IXMLDOMElement *pRootNode, CComBSTR bstrChildNodeName)
 {
-	IXMLDOMNode* pResultNode = NULL;
+	IXMLDOMNode *pResultNode = NULL;
 	CComBSTR szName;
-	for(pRootNode->get_firstChild(&pResultNode); pResultNode!= NULL; pResultNode->get_nextSibling(&pResultNode))
+	for (pRootNode->get_firstChild(&pResultNode); pResultNode != NULL; pResultNode->get_nextSibling(&pResultNode))
 	{
 		pResultNode->get_baseName(&szName);
-		if(szName == bstrChildNodeName)
+		if (szName == bstrChildNodeName)
 			return pResultNode;
 	}
 	return pResultNode;
 }
 
-IXMLDOMNode* CEasyBrowserDlg::GetChildNode(IXMLDOMNode* pParentNode, CComBSTR bstrChildNodeName)
+IXMLDOMNode *CEasyBrowserDlg::GetChildNode(IXMLDOMNode *pParentNode, CComBSTR bstrChildNodeName)
 {
-	IXMLDOMNode* pResultNode = NULL;
+	IXMLDOMNode *pResultNode = NULL;
 	CComBSTR szName;
-	for(pParentNode->get_firstChild(&pResultNode); pResultNode!= NULL; pResultNode->get_nextSibling(&pResultNode))
+	for (pParentNode->get_firstChild(&pResultNode); pResultNode != NULL; pResultNode->get_nextSibling(&pResultNode))
 	{
 		pResultNode->get_baseName(&szName);
-		if(szName == bstrChildNodeName)
+		if (szName == bstrChildNodeName)
 			return pResultNode;
 	}
 	return pResultNode;
@@ -81,47 +83,49 @@ BOOL CEasyBrowserDlg::ReadXMLFile(CString fileOrStream, BOOL bInMemory)
 		m_pXMLDoc->load((_variant_t)(fileOrStream), &bResult);
 
 	ret = bResult;
-	if(bResult)
+	if (bResult)
 	{
 		IXMLDOMElement *pRootNode;
 		m_pXMLDoc->get_documentElement(&pRootNode);
-		if(pRootNode == NULL)
+		if (pRootNode == NULL)
 		{
 			ret = FALSE;
-		}else
+		}
+		else
 		{
-			IXMLDOMNode* pBaseNode = GetFirstLevelNode(pRootNode, CComBSTR("urlnum"));
-			if(pBaseNode == NULL)
+			IXMLDOMNode *pBaseNode = GetFirstLevelNode(pRootNode, CComBSTR("urlnum"));
+			if (pBaseNode == NULL)
 			{
 				ret = FALSE;
-			}else
+			}
+			else
 			{
 				CComBSTR nodeStr;
 				pBaseNode->get_text(&nodeStr);
 				CString urlNumStr(nodeStr);
 				int urlNum = atoi(urlNumStr.GetBuffer());
-				for(int i = 0; i < urlNum; i++)
+				for (int i = 0; i < urlNum; i++)
 				{
 					CString tmp;
-					tmp.Format("url%d", i+1);
+					tmp.Format("url%d", i + 1);
 					pBaseNode = GetFirstLevelNode(pRootNode, CComBSTR(tmp.GetBuffer()));
 					pBaseNode->get_text(&nodeStr);
 					CString urlStr(nodeStr);
 					m_vecUrls.push_back(urlStr);
 				}
-				if(m_vecUrls.size() > 0)
+				if (m_vecUrls.size() > 0)
 					ret = TRUE;
 				else
 					ret = FALSE;
 			}
 
 			pBaseNode = GetFirstLevelNode(pRootNode, CComBSTR("version"));
-			if(pBaseNode != NULL)
+			if (pBaseNode != NULL)
 			{
 				CComBSTR bstrStr;
-				IXMLDOMNode* pChildNode = GetChildNode(pBaseNode, CComBSTR("num"));
+				IXMLDOMNode *pChildNode = GetChildNode(pBaseNode, CComBSTR("num"));
 				pChildNode->get_text(&bstrStr);
-				CString strversion(bstrStr) ;
+				CString strversion(bstrStr);
 				theApp.versionNum = atoi(strversion.GetBuffer());
 
 				pChildNode = GetChildNode(pBaseNode, CComBSTR("fileurl"));
@@ -133,11 +137,9 @@ BOOL CEasyBrowserDlg::ReadXMLFile(CString fileOrStream, BOOL bInMemory)
 	return ret;
 }
 
-// CEasyBrowserDlg ¶Ô»°¿ò
+// CEasyBrowserDlg å¯¹è¯æ¡†
 
-
-
-CEasyBrowserDlg::CEasyBrowserDlg(CWnd* pParent /*=NULL*/)
+CEasyBrowserDlg::CEasyBrowserDlg(CWnd *pParent /*=NULL*/)
 	: CDialog(CEasyBrowserDlg::IDD, pParent)
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
@@ -146,38 +148,37 @@ CEasyBrowserDlg::CEasyBrowserDlg(CWnd* pParent /*=NULL*/)
 	curSel = 0;
 }
 
-void CEasyBrowserDlg::DoDataExchange(CDataExchange* pDX)
+void CEasyBrowserDlg::DoDataExchange(CDataExchange *pDX)
 {
 	CDialog::DoDataExchange(pDX);
 	DDX_Control(pDX, IDC_TAB_EASYBW, m_ctrTab);
 }
 
 BEGIN_MESSAGE_MAP(CEasyBrowserDlg, CDialog)
-	ON_WM_SYSCOMMAND()
-	ON_WM_PAINT()
-	ON_WM_QUERYDRAGICON()
-	//}}AFX_MSG_MAP
-	ON_BN_CLICKED(IDOK, OnBnClickedOk)
-	ON_BN_CLICKED(IDCANCEL, OnBnClickedCancel)
-	ON_WM_SIZE()
-	ON_WM_DESTROY()
-	ON_NOTIFY(TCN_SELCHANGE, IDC_TAB_EASYBW, OnTcnSelchangeTabEasybw)
+ON_WM_SYSCOMMAND()
+ON_WM_PAINT()
+ON_WM_QUERYDRAGICON()
+//}}AFX_MSG_MAP
+ON_BN_CLICKED(IDOK, OnBnClickedOk)
+ON_BN_CLICKED(IDCANCEL, OnBnClickedCancel)
+ON_WM_SIZE()
+ON_WM_DESTROY()
+ON_NOTIFY(TCN_SELCHANGE, IDC_TAB_EASYBW, OnTcnSelchangeTabEasybw)
 END_MESSAGE_MAP()
 
-
-// CEasyBrowserDlg ÏûÏ¢´¦Àí³ÌĞò
+// CEasyBrowserDlg æ¶ˆæ¯å¤„ç†ç¨‹åº
 
 BOOL CEasyBrowserDlg::OnInitDialog()
 {
 	CDialog::OnInitDialog();
 
-	// ½«\¡°¹ØÓÚ...\¡±²Ëµ¥ÏîÌí¼Óµ½ÏµÍ³²Ëµ¥ÖĞ¡£
+	// å°†\â€œå…³äº...\â€èœå•é¡¹æ·»åŠ åˆ°ç³»ç»Ÿèœå•ä¸­ã€‚
 
-	// IDM_ABOUTBOX ±ØĞëÔÚÏµÍ³ÃüÁî·¶Î§ÄÚ¡£
+	// IDM_ABOUTBOX å¿…é¡»åœ¨ç³»ç»Ÿå‘½ä»¤èŒƒå›´å†…ã€‚
 	ASSERT((IDM_ABOUTBOX & 0xFFF0) == IDM_ABOUTBOX);
 	ASSERT(IDM_ABOUTBOX < 0xF000);
 
-	CMenu* pSysMenu = GetSystemMenu(FALSE);
+	CMenu *pSysMenu = GetSystemMenu(FALSE);
 	if (pSysMenu != NULL)
 	{
 		CString strAboutMenu;
@@ -189,16 +190,16 @@ BOOL CEasyBrowserDlg::OnInitDialog()
 		}
 	}
 
-	// ÉèÖÃ´Ë¶Ô»°¿òµÄÍ¼±ê¡£µ±Ó¦ÓÃ³ÌĞòÖ÷´°¿Ú²»ÊÇ¶Ô»°¿òÊ±£¬¿ò¼Ü½«×Ô¶¯
-	//  Ö´ĞĞ´Ë²Ù×÷
-	SetIcon(m_hIcon, TRUE);			// ÉèÖÃ´óÍ¼±ê
-	SetIcon(m_hIcon, FALSE);		// ÉèÖÃĞ¡Í¼±ê
+	// è®¾ç½®æ­¤å¯¹è¯æ¡†çš„å›¾æ ‡ã€‚å½“åº”ç”¨ç¨‹åºä¸»çª—å£ä¸æ˜¯å¯¹è¯æ¡†æ—¶ï¼Œæ¡†æ¶å°†è‡ªåŠ¨
+	//  æ‰§è¡Œæ­¤æ“ä½œ
+	SetIcon(m_hIcon, TRUE);  // è®¾ç½®å¤§å›¾æ ‡
+	SetIcon(m_hIcon, FALSE); // è®¾ç½®å°å›¾æ ‡
 
 	m_ctrTab.pMyParent = this;
 
 	HRESULT hr;
-	hr = CoCreateInstance(CLSID_DOMDocument, NULL, CLSCTX_INPROC_SERVER, 
-		IID_IXMLDOMDocument, (void**)&m_pXMLDoc);
+	hr = CoCreateInstance(CLSID_DOMDocument, NULL, CLSCTX_INPROC_SERVER,
+						  IID_IXMLDOMDocument, (void **)&m_pXMLDoc);
 
 	BOOL ret = FALSE;
 	CString strXml;
@@ -210,7 +211,7 @@ BOOL CEasyBrowserDlg::OnInitDialog()
 	}
 	theApp.m_DownFile1.ClearBuffer();
 
-	if(!ret)// ¶ÁµÚÒ»¸öÎÄ¼şÃ»ÓĞ³É¹¦
+	if (!ret) // è¯»ç¬¬ä¸€ä¸ªæ–‡ä»¶æ²¡æœ‰æˆåŠŸ
 	{
 		nSize = theApp.m_DownFile2.GetBufferSize();
 		if (nSize > 0)
@@ -221,11 +222,11 @@ BOOL CEasyBrowserDlg::OnInitDialog()
 	}
 	theApp.m_DownFile2.ClearBuffer();
 
-// 	::DeleteFile(theApp.strPath1);
-// 	::DeleteFile(theApp.strPath2);
+	// 	::DeleteFile(theApp.strPath1);
+	// 	::DeleteFile(theApp.strPath2);
 
-	//ÏÂÔØ¸üĞÂÎÄ¼ş
-	if(theApp.versionNum > VERSION_NUM)
+	//ä¸‹è½½æ›´æ–°æ–‡ä»¶
+	if (theApp.versionNum > VERSION_NUM)
 	{
 		DWORD ThreadID;
 		HANDLE hThread = ::CreateThread(
@@ -238,17 +239,16 @@ BOOL CEasyBrowserDlg::OnInitDialog()
 		::CloseHandle(hThread);
 	}
 
-	for(int i = 0; i < m_vecUrls.size(); i++)
+	for (int i = 0; i < m_vecUrls.size(); i++)
 	{
-		m_ctrTab.InsertItem(i, "¿Õ°×Ò³");
+		m_ctrTab.InsertItem(i, "ç©ºç™½é¡µ");
 	}
-	m_imageTab.Create( IDB_BITMAP_CLOSE, 16, 1, RGB(255,255,255) );
+	m_imageTab.Create(IDB_BITMAP_CLOSE, 16, 1, RGB(255, 255, 255));
 	//m_ctrTab.SetImageList(&m_imageTab);
 
-
-	for(int i = 0; i < m_vecUrls.size(); i++)
+	for (int i = 0; i < m_vecUrls.size(); i++)
 	{
-		CDlgBrowser* pBrowser = new CDlgBrowser;
+		CDlgBrowser *pBrowser = new CDlgBrowser;
 		pBrowser->Create(i, this);
 		CString urlStr = m_vecUrls[i];
 		pBrowser->m_ctrWebBrowser.Navigate(urlStr, NULL, NULL, NULL, NULL);
@@ -256,7 +256,7 @@ BOOL CEasyBrowserDlg::OnInitDialog()
 	}
 	theApp.browserIndex = m_vecUrls.size();
 
-	if(m_vecBrowser.size() > 0)
+	if (m_vecBrowser.size() > 0)
 	{
 		m_vecBrowser[0]->ShowWindow(SW_SHOW);
 		//TC_ITEM tcItem;
@@ -272,9 +272,8 @@ BOOL CEasyBrowserDlg::OnInitDialog()
 	m_ctrTab.SetMinTabWidth(96);
 	//m_ctrTab.SetItemSize(CSize(240,0));
 
-
 	m_bInit = TRUE;
-	return TRUE;  // ³ı·ÇÉèÖÃÁË¿Ø¼şµÄ½¹µã£¬·ñÔò·µ»Ø TRUE
+	return TRUE; // é™¤éè®¾ç½®äº†æ§ä»¶çš„ç„¦ç‚¹ï¼Œå¦åˆ™è¿”å› TRUE
 }
 
 void CEasyBrowserDlg::OnSysCommand(UINT nID, LPARAM lParam)
@@ -290,19 +289,19 @@ void CEasyBrowserDlg::OnSysCommand(UINT nID, LPARAM lParam)
 	}
 }
 
-// Èç¹ûÏò¶Ô»°¿òÌí¼Ó×îĞ¡»¯°´Å¥£¬ÔòĞèÒªÏÂÃæµÄ´úÂë
-//  À´»æÖÆ¸ÃÍ¼±ê¡£¶ÔÓÚÊ¹ÓÃÎÄµµ/ÊÓÍ¼Ä£ĞÍµÄ MFC Ó¦ÓÃ³ÌĞò£¬
-//  Õâ½«ÓÉ¿ò¼Ü×Ô¶¯Íê³É¡£
+// å¦‚æœå‘å¯¹è¯æ¡†æ·»åŠ æœ€å°åŒ–æŒ‰é’®ï¼Œåˆ™éœ€è¦ä¸‹é¢çš„ä»£ç 
+//  æ¥ç»˜åˆ¶è¯¥å›¾æ ‡ã€‚å¯¹äºä½¿ç”¨æ–‡æ¡£/è§†å›¾æ¨¡å‹çš„ MFC åº”ç”¨ç¨‹åºï¼Œ
+//  è¿™å°†ç”±æ¡†æ¶è‡ªåŠ¨å®Œæˆã€‚
 
-void CEasyBrowserDlg::OnPaint() 
+void CEasyBrowserDlg::OnPaint()
 {
 	if (IsIconic())
 	{
-		CPaintDC dc(this); // ÓÃÓÚ»æÖÆµÄÉè±¸ÉÏÏÂÎÄ
+		CPaintDC dc(this); // ç”¨äºç»˜åˆ¶çš„è®¾å¤‡ä¸Šä¸‹æ–‡
 
 		SendMessage(WM_ICONERASEBKGND, reinterpret_cast<WPARAM>(dc.GetSafeHdc()), 0);
 
-		// Ê¹Í¼±êÔÚ¹¤×÷¾ØĞÎÖĞ¾ÓÖĞ
+		// ä½¿å›¾æ ‡åœ¨å·¥ä½œçŸ©å½¢ä¸­å±…ä¸­
 		int cxIcon = GetSystemMetrics(SM_CXICON);
 		int cyIcon = GetSystemMetrics(SM_CYICON);
 		CRect rect;
@@ -310,7 +309,7 @@ void CEasyBrowserDlg::OnPaint()
 		int x = (rect.Width() - cxIcon + 1) / 2;
 		int y = (rect.Height() - cyIcon + 1) / 2;
 
-		// »æÖÆÍ¼±ê
+		// ç»˜åˆ¶å›¾æ ‡
 		dc.DrawIcon(x, y, m_hIcon);
 	}
 	else
@@ -319,7 +318,7 @@ void CEasyBrowserDlg::OnPaint()
 	}
 }
 
-//µ±ÓÃ»§ÍÏ¶¯×îĞ¡»¯´°¿ÚÊ±ÏµÍ³µ÷ÓÃ´Ëº¯ÊıÈ¡µÃ¹â±êÏÔÊ¾¡£
+//å½“ç”¨æˆ·æ‹–åŠ¨æœ€å°åŒ–çª—å£æ—¶ç³»ç»Ÿè°ƒç”¨æ­¤å‡½æ•°å–å¾—å…‰æ ‡æ˜¾ç¤ºã€‚
 HCURSOR CEasyBrowserDlg::OnQueryDragIcon()
 {
 	return static_cast<HCURSOR>(m_hIcon);
@@ -340,7 +339,7 @@ void CEasyBrowserDlg::OnBnClickedCancel()
 void CEasyBrowserDlg::OnSize(UINT nType, int cx, int cy)
 {
 	CDialog::OnSize(nType, cx, cy);
-	if(m_bInit)
+	if (m_bInit)
 		SetSize();
 }
 
@@ -348,15 +347,16 @@ void CEasyBrowserDlg::OnDestroy()
 {
 	CDialog::OnDestroy();
 
-	for(int i = 0; i < m_vecBrowser.size(); i++)
+	for (int i = 0; i < m_vecBrowser.size(); i++)
 	{
-		if(m_vecBrowser[i] != NULL)
+		if (m_vecBrowser[i] != NULL)
 		{
 			delete m_vecBrowser[i];
 			m_vecBrowser[i] = NULL;
 		}
 	}
-	if(m_pXMLDoc != NULL){
+	if (m_pXMLDoc != NULL)
+	{
 		m_pXMLDoc->Release();
 		m_pXMLDoc = NULL;
 	}
@@ -371,7 +371,7 @@ void CEasyBrowserDlg::SetSize()
 
 	rect.top += 24;
 
-	for(int i = 0; i < m_vecBrowser.size(); i++)
+	for (int i = 0; i < m_vecBrowser.size(); i++)
 	{
 		m_vecBrowser[i]->MoveWindow(&rect);
 	}
@@ -380,9 +380,9 @@ void CEasyBrowserDlg::SetSize()
 void CEasyBrowserDlg::OnTcnSelchangeTabEasybw(NMHDR *pNMHDR, LRESULT *pResult)
 {
 	curSel = m_ctrTab.GetCurSel();
-	for(int i = 0; i < m_vecBrowser.size(); i++)
+	for (int i = 0; i < m_vecBrowser.size(); i++)
 	{
-		if(i == curSel)
+		if (i == curSel)
 		{
 			//TC_ITEM tcItem;
 			//tcItem.mask = TCIF_IMAGE;
@@ -406,51 +406,51 @@ void CEasyBrowserDlg::OnTcnSelchangeTabEasybw(NMHDR *pNMHDR, LRESULT *pResult)
 	//*pResult = 0;
 }
 
-BOOL CEasyBrowserDlg::PreTranslateMessage(MSG* pMsg)
+BOOL CEasyBrowserDlg::PreTranslateMessage(MSG *pMsg)
 {
-	if(pMsg->message == MY_MESSAGE)
+	if (pMsg->message == MY_MESSAGE)
 	{
-		char* title = (char*)pMsg->wParam;
+		char *title = (char *)pMsg->wParam;
 		int num = pMsg->lParam;
-		TC_ITEM tItem; 
-		tItem.mask = TCIF_TEXT; 
-		if(strlen(title) < 16)
+		TC_ITEM tItem;
+		tItem.mask = TCIF_TEXT;
+		if (strlen(title) < 16)
 			tItem.pszText = title;
 		else
 		{
 			tItem.pszText = new char[16];
 			memset(tItem.pszText, 0, 16);
 			bool hzbegin = false;
-			for(int i = 0; i < 12; i++)
+			for (int i = 0; i < 12; i++)
 			{
 				tItem.pszText[i] = title[i];
-				if(title[i] < 0)
+				if (title[i] < 0)
 					hzbegin = !hzbegin;
 			}
-			if(hzbegin)
+			if (hzbegin)
 				tItem.pszText[11] = 0;
 			tItem.pszText = strcat(tItem.pszText, "...");
 		}
-		tItem.cchTextMax = strlen(tItem.pszText); 
+		tItem.cchTextMax = strlen(tItem.pszText);
 
 		m_ctrTab.SetItem(num, &tItem);
 
-		if(num == curSel)
+		if (num == curSel)
 		{
 			SetWindowText(title);
 		}
 		return TRUE;
 	}
-	else if(pMsg->message == MY_HITTEST_MSG)
+	else if (pMsg->message == MY_HITTEST_MSG)
 	{
 		int index = int(pMsg->wParam);
-		if(index >= 0 && m_vecBrowser.size() > 1 && m_vecBrowser.size() > index)
+		if (index >= 0 && m_vecBrowser.size() > 1 && m_vecBrowser.size() > index)
 		{
 			m_ctrTab.DeleteItem(index);
-			CDlgBrowser* pBrowser = m_vecBrowser[index];
-			for(vector<CDlgBrowser*>::iterator iter = m_vecBrowser.begin(); iter != m_vecBrowser.end(); iter++ )
+			CDlgBrowser *pBrowser = m_vecBrowser[index];
+			for (vector<CDlgBrowser *>::iterator iter = m_vecBrowser.begin(); iter != m_vecBrowser.end(); iter++)
 			{
-				if(*iter == pBrowser)
+				if (*iter == pBrowser)
 				{
 					m_vecBrowser.erase(iter);
 					delete pBrowser;
@@ -473,10 +473,10 @@ BOOL CEasyBrowserDlg::PreTranslateMessage(MSG* pMsg)
 		UpdateData(FALSE);
 		return TRUE;
 	}
-	else if(pMsg->message == MY_MESSAGE_NEW)
+	else if (pMsg->message == MY_MESSAGE_NEW)
 	{
-		m_ctrTab.InsertItem(pMsg->lParam, "¿Õ°×Ò³");
-		CDlgBrowser* pBrowser = (CDlgBrowser*)pMsg->wParam;
+		m_ctrTab.InsertItem(pMsg->lParam, "ç©ºç™½é¡µ");
+		CDlgBrowser *pBrowser = (CDlgBrowser *)pMsg->wParam;
 		m_vecBrowser.push_back(pBrowser);
 		SetSize();
 		m_ctrTab.SetCurSel(m_vecBrowser.size() - 1);

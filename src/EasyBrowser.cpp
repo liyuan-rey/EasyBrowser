@@ -1,4 +1,4 @@
-// EasyBrowser.cpp : ¶¨ÒåÓ¦ÓÃ³ÌĞòµÄÀàĞĞÎª¡£
+// EasyBrowser.cpp : å®šä¹‰åº”ç”¨ç¨‹åºçš„ç±»è¡Œä¸ºã€‚
 //
 
 #include "stdafx.h"
@@ -10,35 +10,31 @@
 #define new DEBUG_NEW
 #endif
 
-
 // CEasyBrowserApp
 
 BEGIN_MESSAGE_MAP(CEasyBrowserApp, CWinApp)
-	ON_COMMAND(ID_HELP, CWinApp::OnHelp)
+ON_COMMAND(ID_HELP, CWinApp::OnHelp)
 END_MESSAGE_MAP()
 
-
-// CEasyBrowserApp ¹¹Ôì
+// CEasyBrowserApp æ„é€ 
 
 CEasyBrowserApp::CEasyBrowserApp()
 {
-	// TODO: ÔÚ´Ë´¦Ìí¼Ó¹¹Ôì´úÂë£¬
+	// TODO: åœ¨æ­¤å¤„æ·»åŠ æ„é€ ä»£ç ï¼Œ
 	versionNum = 0;
-	updatefilePath  = "";
+	updatefilePath = "";
 	browserIndex = 0;
 }
 
-
-// Î¨Ò»µÄÒ»¸ö CEasyBrowserApp ¶ÔÏó
+// å”¯ä¸€çš„ä¸€ä¸ª CEasyBrowserApp å¯¹è±¡
 
 CEasyBrowserApp theApp;
 
-
-// CEasyBrowserApp ³õÊ¼»¯
+// CEasyBrowserApp åˆå§‹åŒ–
 
 BOOL CEasyBrowserApp::InitInstance()
 {
-	GetModuleFileName(NULL,programPath.GetBufferSetLength(MAX_PATH+1),MAX_PATH);
+	GetModuleFileName(NULL, programPath.GetBufferSetLength(MAX_PATH + 1), MAX_PATH);
 	programPath.ReleaseBuffer();
 	int nPos = programPath.ReverseFind('\\');
 	programPath = programPath.Left(nPos + 1);
@@ -48,39 +44,39 @@ BOOL CEasyBrowserApp::InitInstance()
 	strPath2 = programPath;
 	strPath2 += "url2.xml";
 
-	if(CoInitialize(NULL) != S_OK)
+	if (CoInitialize(NULL) != S_OK)
 	{
 		return FALSE;
 	}
-	// Èç¹ûÒ»¸öÔËĞĞÔÚ Windows XP ÉÏµÄÓ¦ÓÃ³ÌĞòÇåµ¥Ö¸¶¨Òª
-	// Ê¹ÓÃ ComCtl32.dll °æ±¾ 6 »ò¸ü¸ß°æ±¾À´ÆôÓÃ¿ÉÊÓ»¯·½Ê½£¬
-	//ÔòĞèÒª InitCommonControls()¡£·ñÔò£¬½«ÎŞ·¨´´½¨´°¿Ú¡£
+	// å¦‚æœä¸€ä¸ªè¿è¡Œåœ¨ Windows XP ä¸Šçš„åº”ç”¨ç¨‹åºæ¸…å•æŒ‡å®šè¦
+	// ä½¿ç”¨ ComCtl32.dll ç‰ˆæœ¬ 6 æˆ–æ›´é«˜ç‰ˆæœ¬æ¥å¯ç”¨å¯è§†åŒ–æ–¹å¼ï¼Œ
+	//åˆ™éœ€è¦ InitCommonControls()ã€‚å¦åˆ™ï¼Œå°†æ— æ³•åˆ›å»ºçª—å£ã€‚
 	InitCommonControls();
 
 	CWinApp::InitInstance();
 
 	AfxEnableControlContainer();
 
-	// ±ê×¼³õÊ¼»¯
-	// Èç¹ûÎ´Ê¹ÓÃÕâĞ©¹¦ÄÜ²¢Ï£Íû¼õĞ¡
-	// ×îÖÕ¿ÉÖ´ĞĞÎÄ¼şµÄ´óĞ¡£¬ÔòÓ¦ÒÆ³ıÏÂÁĞ
-	// ²»ĞèÒªµÄÌØ¶¨³õÊ¼»¯Àı³Ì
-	// ¸ü¸ÄÓÃÓÚ´æ´¢ÉèÖÃµÄ×¢²á±íÏî
-	// TODO: Ó¦ÊÊµ±ĞŞ¸Ä¸Ã×Ö·û´®£¬
-	// ÀıÈçĞŞ¸ÄÎª¹«Ë¾»ò×éÖ¯Ãû
+	// æ ‡å‡†åˆå§‹åŒ–
+	// å¦‚æœæœªä½¿ç”¨è¿™äº›åŠŸèƒ½å¹¶å¸Œæœ›å‡å°
+	// æœ€ç»ˆå¯æ‰§è¡Œæ–‡ä»¶çš„å¤§å°ï¼Œåˆ™åº”ç§»é™¤ä¸‹åˆ—
+	// ä¸éœ€è¦çš„ç‰¹å®šåˆå§‹åŒ–ä¾‹ç¨‹
+	// æ›´æ”¹ç”¨äºå­˜å‚¨è®¾ç½®çš„æ³¨å†Œè¡¨é¡¹
+	// TODO: åº”é€‚å½“ä¿®æ”¹è¯¥å­—ç¬¦ä¸²ï¼Œ
+	// ä¾‹å¦‚ä¿®æ”¹ä¸ºå…¬å¸æˆ–ç»„ç»‡å
 
 	SetRegistryKey(_T("EasyBrowser"));
 
 	int KeyVersion = GetProfileInt("System", "VersionNum", 0);
-	if(KeyVersion > VERSION_NUM)
+	if (KeyVersion > VERSION_NUM)
 	{
 		CString strPathComplete = programPath;
 		strPathComplete += "update.exe";
 
 		if (_access(strPathComplete, 0) == 0)
 		{
-			int ret = AfxMessageBox("·¢ÏÖ¸üĞÂµÄ°æ±¾£¬ÊÇ·ñ¸üĞÂ£¿", MB_YESNO, 0);
-			if(ret == IDYES)
+			int ret = AfxMessageBox("å‘ç°æ›´æ–°çš„ç‰ˆæœ¬ï¼Œæ˜¯å¦æ›´æ–°ï¼Ÿ", MB_YESNO, 0);
+			if (ret == IDYES)
 			{
 				::ShellExecute(NULL, "open", strPathComplete, "", "", SW_SHOW);
 				exit(0);
@@ -88,10 +84,9 @@ BOOL CEasyBrowserApp::InitInstance()
 		}
 	}
 
-
 	m_DownFile1.m_wFileID = m_DownFile1.GenFileID();
 	m_DownFile2.m_wFileID = m_DownFile2.GenFileID();
-	//ÕâÀï×¢²áÍ¨Öª´°¿ÚºÍÏûÏ¢
+	//è¿™é‡Œæ³¨å†Œé€šçŸ¥çª—å£å’Œæ¶ˆæ¯
 	//m_DownFile.RegisterNotifyWindow
 	//path1Url = GetProfileString("System", "PathUrl1", "http://123.66w.com/url.xml");
 	//path2Url = GetProfileString("System", "PathUrl2", "http://www.66w.com/url.xml");
@@ -101,22 +96,21 @@ BOOL CEasyBrowserApp::InitInstance()
 	m_DownFile1.DownloadToBuffer(path1Url);
 	m_DownFile2.DownloadToBuffer(path2Url);
 
-
 	CEasyBrowserDlg dlg;
 	m_pMainWnd = &dlg;
 	INT_PTR nResponse = dlg.DoModal();
 	if (nResponse == IDOK)
 	{
-		// TODO: ÔÚ´Ë·ÅÖÃ´¦ÀíºÎÊ±ÓÃ¡°È·¶¨¡±À´¹Ø±Õ
-		//¶Ô»°¿òµÄ´úÂë
+		// TODO: åœ¨æ­¤æ”¾ç½®å¤„ç†ä½•æ—¶ç”¨â€œç¡®å®šâ€æ¥å…³é—­
+		//å¯¹è¯æ¡†çš„ä»£ç 
 	}
 	else if (nResponse == IDCANCEL)
 	{
-		// TODO: ÔÚ´Ë·ÅÖÃ´¦ÀíºÎÊ±ÓÃ¡°È¡Ïû¡±À´¹Ø±Õ
-		//¶Ô»°¿òµÄ´úÂë
+		// TODO: åœ¨æ­¤æ”¾ç½®å¤„ç†ä½•æ—¶ç”¨â€œå–æ¶ˆâ€æ¥å…³é—­
+		//å¯¹è¯æ¡†çš„ä»£ç 
 	}
 
-	// ÓÉÓÚ¶Ô»°¿òÒÑ¹Ø±Õ£¬ËùÒÔ½«·µ»Ø FALSE ÒÔ±ãÍË³öÓ¦ÓÃ³ÌĞò£¬
-	// ¶ø²»ÊÇÆô¶¯Ó¦ÓÃ³ÌĞòµÄÏûÏ¢±Ã¡£
+	// ç”±äºå¯¹è¯æ¡†å·²å…³é—­ï¼Œæ‰€ä»¥å°†è¿”å› FALSE ä»¥ä¾¿é€€å‡ºåº”ç”¨ç¨‹åºï¼Œ
+	// è€Œä¸æ˜¯å¯åŠ¨åº”ç”¨ç¨‹åºçš„æ¶ˆæ¯æ³µã€‚
 	return FALSE;
 }
